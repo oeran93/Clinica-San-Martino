@@ -1,0 +1,25 @@
+#header_bg_image{
+	background-image: url("../images/bg/1.jpg");
+	background-position: center center;
+	background-size: cover;
+	height:500px;
+}
+.navbar{
+	border-bottom: 0;
+	background-color: rgba(255,255,255,0);
+}
+
+.navbar-default span{
+	padding-right: 10px;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:#333;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color:black;
+}
+
+#header_description{
+	margin-top: 50px;
+}
