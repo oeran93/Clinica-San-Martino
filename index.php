@@ -41,31 +41,36 @@
 		</div>
 		<div id="services_bg_image">
 			<div class="container" id="services">
+				<div class="row title">
+					<div class="col-xs-12">
+						<h3 class="text-capitalize text-center">servizi</h3>
+					</div>
+				</div>
 				<div class="row">
 					
-					<section class="text-capitalize col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_info">
 						<img class=" img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4>radiologia e servizi diagnostici</h4>
-						Per diagnostica per immagini -o imaging- si intendono le modalità di formazione delle immagini biomediche utilizzate a scopo diagnostico. Tra queste l’ecografia, la risonanza magnetica (RMN) e la Tomografia assiale computerizzata (TAC).
+						<h4 class="text-capitalize">radiologia e servizi diagnostici</h4>
+						Per diagnostica per immagini -o imaging- si intendono le modalità di formazione delle immagini biomediche utilizzate a scopo diagnostico. Tra queste l’ecografia, la risonanza magnetica (RMN) e la Tomografia assiale computerizzata (TAC). <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="text-capitalize col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_info">
 						<img class="img-thumbnail img-responsive"src="./images/services/2.jpg">
-						<h4>Ambulatori Specialistici</h4>
-						Scegli tra le specialità elencate: Dermatologia, Cadiologia, Endocrinologia, Medicina Interna, Osteopatia, Medicina del Sonno, Otorinolaringoiatria, Urologia e Andrologia, Ginecologia
+						<h4 class="text-capitalize">Ambulatori Specialistici</h4>
+						Scegli tra le specialità elencate: Dermatologia, Cardiologia, Endocrinologia, Medicina Interna, Osteopatia, Medicina del Sonno, Otorinolaringoiatria, Urologia e Andrologia, Ginecologia <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="text-capitalize col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_info">
 						<img class="img-thumbnail img-responsive"src="./images/services/3.jpg">
-						<h4>Chirurgia Maxillo-Facciale</h4>
-						La chirurgia maxillo-facciale è la specialità medico-chirurgica che si occupa delle operazioni mirate alla cura di vari tipi di patologia –tra cui traumatismo, malformazione, neoplasia, infezione, degenerazione – e di problematiche estetico-funzionali dei denti, della bocca e della faccia.
+						<h4 class="text-capitalize">Chirurgia Maxillo-Facciale</h4>
+						La chirurgia maxillo-facciale è la specialità medico-chirurgica che si occupa delle operazioni mirate alla cura di vari tipi di patologia –tra cui traumatismo, malformazione, neoplasia, infezione, degenerazione – e di problematiche estetico-funzionali dei denti, della bocca e della faccia. <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="text-capitalize col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_info">
 						<img class="img-thumbnail img-responsive"src="./images/services/4.jpg">
-						<h4>Implantologia Dentale</h4>
-						Con il termine Implantologia si intende l’insieme di tecniche chirurgiche atte alla riabilitazione funzionale dei pazienti il cui apparato dentale deve essere tutto o in parte ripristinato.
+						<h4 class="text-capitalize">Implantologia Dentale</h4>
+						Con il termine Implantologia si intende l’insieme di tecniche chirurgiche atte alla riabilitazione funzionale dei pazienti il cui apparato dentale deve essere tutto o in parte ripristinato. <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="hidden text-capitalize col-xs-6 col-sm-3 services_info">
+					<section class="hidden col-xs-6 col-sm-3 services_info">
 						<img class="img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4>Odontoiatria e Ortodonzia</h4>
+						<h4 class="text-capitalize">Odontoiatria e Ortodonzia</h4>
 					</div>
 					</section>
 				</div>
@@ -73,8 +78,20 @@
 		</div>
 		<div id="contacts_bg_image">
 			<div class="container" id="contacts">
+				<div class="row title">
+					<div class="col-xs-12">
+						<h3 class="text-capitalize text-center">contattaci</h3>
+					</div>
+				</div>
 				<div class="row">
 					<section class="col-xs-7 col-sm-5" id="contacts_info">
+						<div class="row contacts_info">
+							<div class="col-xs-10">
+								Siamo aperti da <b>Lunedi'</b> a <b>Venerdi'</b>, dalle <b>7:30</b> alle <b>19:00</b>.
+								Sabato dale <b>7:30</b> alle <b>11:00</b>.</br>
+								Le <b>analisi del sangue</b> vengono effettuate da <b>Lunedi'</b> a <b>Sabato</b>, dalle <b>7:30</b> alle <b>8:45</b></br>
+							</div>	
+						</div>
 						<div class="row contacts_info">
 							<div class="col-xs-2">
 								<span class="fa fa-phone-square fa-3x"></span>
@@ -96,7 +113,7 @@
 								<span class="fa fa-facebook-official fa-3x"></span>
 							</div>
 							<div class="col-xs-10">
-								<a href="https://www.facebook.com/clinicasmartinomalgrate/"> Visita La Nostra Pagina Facebook</a>
+								<span class="badge"><a href="https://www.facebook.com/clinicasmartinomalgrate/"> Visita La Nostra Pagina Facebook</a></badge>
 							</div>
 						</div>
 					</section>
@@ -108,6 +125,11 @@
 		</div>
 		<div id="where_bg_image">
 			<div class="container" id="where">
+				<div class="row title">
+					<div class="col-xs-12">
+						<h3 class="text-capitalize text-center">dove siamo?</h3>
+					</div>
+				</div>
 				<div class="row">
 					<section class="col-xs-12 col-sm-12 col-md-7" id="where_map">
 						<div id="map"></div>
@@ -159,9 +181,10 @@
 		</div>
 		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./js/layout.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLzVV02U5Y6GHXWV-wz9hNOuFpfSJWtUk&callback=initMap"
-        async defer></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script type="text/javascript" src="./js/map_styles.js"></script>
+		<script type="text/javascript" src="./js/maps.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
 	</body>
 
 </html>
