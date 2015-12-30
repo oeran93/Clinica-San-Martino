@@ -19,7 +19,8 @@
 					data-toggle="collapse" data-target="#collapsemenu">
 						<span class="fa fa-bars fa-2x"></span>
 					</button>
-					<div id="logo" class="navbar-left"><a href="#"><img class="img-responsive" src="./images/brand/logo_3.png"></a></div>
+					<div id="large_logo" class="hidden-xs hidden-sm navbar-left"><a href="#"><img class="img-responsive" src="./images/brand/logo_3.png"></a></div>
+					<div id="small_logo" class="hidden-md hidden-lg navbar-left"><a href="#"><img class="img-responsive" src="./images/brand/logo_2.png"></a></div>
 					<div class="collapse navbar-collapse" id="collapsemenu">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#"><span class="fa fa-location-arrow fa-lg"></span>Dove Siamo</a></li>
@@ -32,13 +33,16 @@
 			</nav>
 			<div class="container" id="header">
 				<div class="row">
-					<section class="col-xs-12 col-sm-6" id="header_description">
+					<section class="col-xs-12 col-sm-5 col-md-4" id="header_description">
 						<h2 class="text-capitalize">clinica "San Martino"</h2>
 						<h4 class="text-capitalize">il cuore delle alpi, il cuore della medicina</h4>
+						<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq. La crescita demografica dell’intera provincia negli ultimi 10 anni si è assestata attorno al 9,1 %, annuo  rendendo la provincia di Lecco una delle più popolose </span><span class="badge"><a href="">continua</a></span>
 					</section>
 				</div>
 			</div>
 		</div>
+		<span class="hidden-xs fa fa-arrow-circle-o-left fa-4x scroll_arrow" id="left_scroll_arrow"></span>
+		<span class="hidden-xs fa fa-arrow-circle-o-right fa-4x scroll_arrow" id="right_scroll_arrow"></span>
 		<div id="services_bg_image">
 			<div class="container" id="services">
 				<div class="row title">
@@ -46,32 +50,26 @@
 						<h3 class="text-capitalize text-center">servizi</h3>
 					</div>
 				</div>
-				<div class="row">
-					
-					<section class="col-xs-6 col-sm-3 services_info">
+				<div class="row h_scroll">
+					<section class="col-xs-6 col-sm-3 services_box">
 						<img class=" img-thumbnail img-responsive"src="./images/services/1.jpg">
 						<h4 class="text-capitalize">radiologia e servizi diagnostici</h4>
-						Per diagnostica per immagini -o imaging- si intendono le modalità di formazione delle immagini biomediche utilizzate a scopo diagnostico. Tra queste l’ecografia, la risonanza magnetica (RMN) e la Tomografia assiale computerizzata (TAC). <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/2.jpg">
 						<h4 class="text-capitalize">Ambulatori Specialistici</h4>
-						Scegli tra le specialità elencate: Dermatologia, Cardiologia, Endocrinologia, Medicina Interna, Osteopatia, Medicina del Sonno, Otorinolaringoiatria, Urologia e Andrologia, Ginecologia <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/3.jpg">
 						<h4 class="text-capitalize">Chirurgia Maxillo-Facciale</h4>
-						La chirurgia maxillo-facciale è la specialità medico-chirurgica che si occupa delle operazioni mirate alla cura di vari tipi di patologia –tra cui traumatismo, malformazione, neoplasia, infezione, degenerazione – e di problematiche estetico-funzionali dei denti, della bocca e della faccia. <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/4.jpg">
 						<h4 class="text-capitalize">Implantologia Dentale</h4>
-						Con il termine Implantologia si intende l’insieme di tecniche chirurgiche atte alla riabilitazione funzionale dei pazienti il cui apparato dentale deve essere tutto o in parte ripristinato. <span class="badge"><a href="">continua</a></span>
 					</section>
-					<section class="hidden col-xs-6 col-sm-3 services_info">
+					<section class="col-xs-6 col-sm-3 services_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/1.jpg">
 						<h4 class="text-capitalize">Odontoiatria e Ortodonzia</h4>
-					</div>
 					</section>
 				</div>
 			</div>
@@ -80,13 +78,13 @@
 			<div class="container" id="contacts">
 				<div class="row title">
 					<div class="col-xs-12">
-						<h3 class="text-capitalize text-center">contattaci</h3>
+						<h3 class="text-capitalize text-center">contatti</h3>
 					</div>
 				</div>
 				<div class="row">
-					<section class="col-xs-7 col-sm-5" id="contacts_info">
+					<section class="col-xs-12 col-sm-5" id="contacts_info">
 						<div class="row contacts_info">
-							<div class="col-xs-10">
+							<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
 								Siamo aperti da <b>Lunedi'</b> a <b>Venerdi'</b>, dalle <b>7:30</b> alle <b>19:00</b>.
 								Sabato dale <b>7:30</b> alle <b>11:00</b>.</br>
 								Le <b>analisi del sangue</b> vengono effettuate da <b>Lunedi'</b> a <b>Sabato</b>, dalle <b>7:30</b> alle <b>8:45</b></br>
@@ -117,7 +115,7 @@
 							</div>
 						</div>
 					</section>
-					<section class="col-xs-5 col-sm-7" id="contacts_photo">
+					<section class="hidden-xs col-sm-7" id="contacts_photo">
 						<img class="img-responsive img-rounded img-thumbnail" src="./images/contact/1.jpg">
 					</section>
 				</div>
@@ -184,14 +182,8 @@
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script type="text/javascript" src="./js/map_styles.js"></script>
 		<script type="text/javascript" src="./js/maps.js"></script>
+		<script type="text/javascript" src="./js/format.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 	</body>
 
 </html>
-
-<!-- <section class="col-sm-6 col-md-4 hidden-xs" id="header_description">
-						<h2 class="text-capitalize">eccellenza italiana, nel cuore delle alpi</h2>
-						
-						La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq...
-						<a href="#">Continua a Leggere</a>
-					</section> -->
