@@ -1,83 +1,143 @@
+/*GENERAL*/
 body{
 	font-size:14px;
-	font-family: "Arab Slab"
-}
-a{
-	color:white;
+	font-family: "Arab Slab";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 a:hover{
-	color: white;
+	text-decoration: none;
+}a:visited{
+	text-decoration: none;
+}a:focus{
 	text-decoration: none;
 }
-.badge{
-	background-color:rgba(0,17,26,1);
-	border-radius:5px;
-	font-weight: 100;
+.link{
+	padding:2px 5px 2px 5px;
+	font-size: 85%;
+	color: rgba(0,17,26,1);
 }
-.badge:hover{
-	background-color:rgba(28,114,160,1);
+.link:visited{
+	color: rgba(0,17,26,1) !important;
 }
-.h_scroll{
-	overflow:hidden;
-	white-space: nowrap;
-}.title{
-	padding:0 0 30px 0;
+.title_box{
+	padding:30px 0 30px 0;
+}
+.text_stand_out{
+	font-family: "Source Sans Pro";
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+#scroll_top{
+	cursor: hand;
+	cursor: pointer;
+	display:none;
+	position:fixed;
+	width:115px;
+	height:30px;
+	top:0;
+	left:50%;
+	margin-left: -57px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: rgba(  5, 131, 198,1);
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+	color:white;
+	z-index:100;
+	box-shadow: 2px 2px 5px 0 black;
 }
 
-#header_bg_image{
-	background-image: url("../images/bg/1.jpg");
-	background-position: center center;
-	background-size: cover;
-	height: 550px;
-	-webkit-box-shadow: 0 5px 40px #747474;
-	   -moz-box-shadow: 0 5px 40px #747474;
-	        box-shadow: 0 5px 40px #747474;
-}
-
+/*NAVIGATION BAR*/
 .navbar, .navbar-default{
-	min-height: 70px;
+	margin-bottom: 0;
+	min-height: 60px;
 	border:0;
 	border-radius: 0;
-	background-color: rgba(255,255,255,.9);
-	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
-}
-.navbar-default span{
-	padding-right: 10px;
+	background-color: transparent;
 }
 .navbar-default .navbar-nav>li>a{
-	color:rgba(0,17,26,1);
-	line-height: 35px;
+	font-weight: 600;
+	color:rgba(255,255,255,1);
+	line-height: 30px;
+	border-bottom: 2px solid transparent;
 }
 .navbar-default .navbar-nav>li>a:hover{
-	color:rgba(28,114,160,1);
+	color:rgba(255,255,255,1);
+	border-bottom: 2px solid white;
 }
-.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
-	background-color: transparent;
-	color:rgba(28,114,160,1);
+@media (max-width: 767px){
+	.navbar-default .navbar-nav>li>a{
+		border-bottom: 0;
+	}
+	.navbar-default .navbar-nav>li>a:hover{
+		border-bottom: 0;
+	}	
 }
 .navbar-toggle{
 	color:rgba(0,17,26,1);
 	border:0;
-}
-#large_logo img{
-	height:70px;
-	width:318px;
-}
-#small_logo img{
-	height:70px;
-	width:90px;
+}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
+	background-color: transparent;
+	color:rgba(255,255,255,1);
 }
 
+/*HORIZONTAL SCROLLER*/
+.h_scroll{
+	overflow:hidden;
+	white-space: nowrap;
+}.h_scroll_box{
+	padding:0 20px 60px 20px;
+	white-space: normal;
+	display: inline-block;
+    float: none;
+    text-align: center;
+    vertical-align: top;
+}
+.h_scroll_box h4{
+	text-align: center;
+}
+#h_scroll img{
+	height:100%;
+	width:100%;
+}
+.h_scroll_text{
+	font-size: 15px;
+}
+.scroll_arrow:hover{
+	cursor: hand;
+	cursor: pointer;
+}
+.right_scroll_arrow{
+	float:right;
+}
+.left_scroll_arrow{
+	float:left;
+}
+
+/*ALL SECTIONS*/
+#contacts,#services,#where,#team{
+	padding-bottom: 30px;
+}
+
+/*HEADER*/
+#header_bg_image{
+	background-image: url("../images/bg/1.jpg");
+	background-position: center center;
+	background-size: cover;
+}
+@media (min-width: 768px){
+	#header_bg_image{
+		height: 550px;	
+	}
+}
 #header_description{
-	margin-top: 130px;
+	margin-top: 0px;
 	color:white;
 }
 
-#where,#contacts,#services{
-	padding:30px 15px 30px 15px;
-}
+/*WHERE*/
 #where_map{
 	height:400px;
 }
@@ -86,7 +146,7 @@ a:hover{
 	width:100%;
 	border-radius: 3px;
 }
-.where_info, .contacts_info{
+.where_info{
 	padding:18px 0 18px 0;
 }
 @media (min-width: 992px){
@@ -95,54 +155,43 @@ a:hover{
 	}	
 }
 #where span{
-	color:rgba(0,17,26,1);
+	color:rgba(  5, 131, 198,1);
 }
 
+/*CONTATTI*/
 #contacts_bg_image{
-	background-color: rgba(89,166,207,1);
+	/*background-image: url("../images/contact/bg.png");
+	background-position: center center;
+	background-size: cover;*/
 }
-#contacts img,#services img{
+#contacts img{
 	height:100%;
 	width:100%;
 }
-#contacts{
-	color:white;
+.contacts_info{
+	padding:30px 0 30px 0;
 }
 #contacts_info span{
-	color:rgba(0,17,26,1);
+	color:rgba(  5, 131, 198,1);
 }
 
-.services_box{
-	padding:0 20px 60px 20px;
-    white-space: normal;
-    text-align: center;
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-}
-.services_box:first-child{
-	padding-left:10px;
-}
-.services_box h4{
-	text-align: center;
-}
-.services_text{
-	font-size: 15px;
-}
-.scroll_arrow{
-	position:absolute;
-	color:rgba(0,17,26,1);
-	top:730px;
-	z-index:2;
-}
-.scroll_arrow:hover{
-	cursor: hand;
-	cursor: pointer;
-	color:rgba(28,114,160,1);
-}
-#right_scroll_arrow{
-	right:5px;
-}
-#left_scroll_arrow{
-	left:5px;
-}
+/* CSS - Cascading Style Sheet */
+
+
+/* As hex codes */
+
+.color-primary-0 { color: #01507A }	/* Main Primary color */
+.color-primary-1 { color: #0583C6 }
+.color-primary-2 { color: #026195 }
+.color-primary-3 { color: #013F60 }
+.color-primary-4 { color: #002A40 }
+
+
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba(  1, 80,122,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba(  5,131,198,1) }
+.rgba-primary-2 { color: rgba(  2, 97,149,1) }
+.rgba-primary-3 { color: rgba(  1, 63, 96,1) }
+.rgba-primary-4 { color: rgba(  0, 42, 64,1) }

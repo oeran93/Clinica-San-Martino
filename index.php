@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link href='https://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Antic+Slab:400,600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/layout.css">	
@@ -12,127 +13,77 @@
 	</head>
 
 	<body>
+		<span class="text-capitalize" id="scroll_top"><p>Torna in alto</p></span>
 		<div id="header_bg_image">
-			<nav class="navbar navbar-default navbar-fixed-top">
+			<nav class="navbar navbar-default">
 				<div class="container">
 					<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#collapsemenu">
 						<span class="fa fa-bars fa-2x"></span>
 					</button>
-					<div id="large_logo" class="hidden-xs hidden-sm navbar-left"><a href="#"><img class="img-responsive" src="./images/brand/logo_3.png"></a></div>
-					<div id="small_logo" class="hidden-md hidden-lg navbar-left"><a href="#"><img class="img-responsive" src="./images/brand/logo_2.png"></a></div>
 					<div class="collapse navbar-collapse" id="collapsemenu">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#"><span class="fa fa-location-arrow fa-lg"></span>Dove Siamo</a></li>
-							<li><a href="#"><span class="fa fa-hospital-o fa-lg"></span>Servizi</a></li>
-							<li><a href="#"><span class="fa fa-users fa-lg"></span>Il Team</a></li>
-							<li><a href="#"><span class="fa fa-phone fa-lg"></span>Contatti</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#services">Servizi</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#where">Dove Siamo</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#team">Il Team</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#contacts">Contatti</a></li>
 						</ul>
 					</div>
 				</div>	
 			</nav>
-			<div class="container" id="header">
+			<div class="container hidden-xs" id="header">
 				<div class="row">
-					<section class="col-xs-12 col-sm-5 col-md-4" id="header_description">
+					<section class="col-sm-5 col-md-4" id="header_description">
 						<h2 class="text-capitalize">clinica "San Martino"</h2>
 						<h4 class="text-capitalize">il cuore delle alpi, il cuore della medicina</h4>
-						<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq. La crescita demografica dell’intera provincia negli ultimi 10 anni si è assestata attorno al 9,1 %, annuo  rendendo la provincia di Lecco una delle più popolose </span><span class="badge"><a href="">continua</a></span>
+						<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq. La crescita demografica dell’intera provincia negli ultimi 10 anni si è assestata attorno al 9,1 %, annuo  rendendo la provincia di Lecco una delle più popolose </span><a class="link" href="">continua</a>
 					</section>
 				</div>
 			</div>
 		</div>
-		<span class="hidden-xs fa fa-arrow-circle-o-left fa-4x scroll_arrow" id="left_scroll_arrow"></span>
-		<span class="hidden-xs fa fa-arrow-circle-o-right fa-4x scroll_arrow" id="right_scroll_arrow"></span>
 		<div id="services_bg_image">
 			<div class="container" id="services">
-				<div class="row title">
+				<div class="row title_box">
 					<div class="col-xs-12">
-						<h3 class="text-capitalize text-center">servizi</h3>
+						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>servizi<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
 					</div>
 				</div>
 				<div class="row h_scroll">
-					<section class="col-xs-6 col-sm-3 services_box">
+					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class=" img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4 class="text-capitalize">radiologia e servizi diagnostici</h4>
+						<h4 class="text-capitalize"><a href="#" class="link">radiologia e servizi diagnostici</a></h4>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_box">
+					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/2.jpg">
-						<h4 class="text-capitalize">Ambulatori Specialistici</h4>
+						<h4 class="text-capitalize"><a href="#" class="link">Ambulatori Specialistici</a></h4>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_box">
+					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/3.jpg">
-						<h4 class="text-capitalize">Chirurgia Maxillo-Facciale</h4>
+						<h4 class="text-capitalize"><a href="#" class="link">Chirurgia Maxillo-Facciale</a></h4>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_box">
+					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/4.jpg">
-						<h4 class="text-capitalize">Implantologia Dentale</h4>
+						<h4 class="text-capitalize"><a href="#" class="link">Implantologia Dentale</a></h4>
 					</section>
-					<section class="col-xs-6 col-sm-3 services_box">
+					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4 class="text-capitalize">Odontoiatria e Ortodonzia</h4>
-					</section>
-				</div>
-			</div>
-		</div>
-		<div id="contacts_bg_image">
-			<div class="container" id="contacts">
-				<div class="row title">
-					<div class="col-xs-12">
-						<h3 class="text-capitalize text-center">contatti</h3>
-					</div>
-				</div>
-				<div class="row">
-					<section class="col-xs-12 col-sm-5" id="contacts_info">
-						<div class="row contacts_info">
-							<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
-								Siamo aperti da <b>Lunedi'</b> a <b>Venerdi'</b>, dalle <b>7:30</b> alle <b>19:00</b>.
-								Sabato dale <b>7:30</b> alle <b>11:00</b>.</br>
-								Le <b>analisi del sangue</b> vengono effettuate da <b>Lunedi'</b> a <b>Sabato</b>, dalle <b>7:30</b> alle <b>8:45</b></br>
-							</div>	
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-phone-square fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								+39 0341 1695111
-							</div>
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-paper-plane fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								info@clinicasmartino.it
-							</div>
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-facebook-official fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								<span class="badge"><a href="https://www.facebook.com/clinicasmartinomalgrate/"> Visita La Nostra Pagina Facebook</a></badge>
-							</div>
-						</div>
-					</section>
-					<section class="hidden-xs col-sm-7" id="contacts_photo">
-						<img class="img-responsive img-rounded img-thumbnail" src="./images/contact/1.jpg">
+						<h4 class="text-capitalize"><a href="#" class="link">Odontoiatria e Ortodonzia</a></h4>
 					</section>
 				</div>
 			</div>
 		</div>
 		<div id="where_bg_image">
 			<div class="container" id="where">
-				<div class="row title">
+				<div class="row title_box">
 					<div class="col-xs-12">
-						<h3 class="text-capitalize text-center">dove siamo?</h3>
+						<h3 class="text_stand_out text-center">dove siamo</h3>
 					</div>
 				</div>
 				<div class="row">
-					<section class="col-xs-12 col-sm-12 col-md-7" id="where_map">
+					<section class="col-xs-12 col-md-7" id="where_map">
 						<div id="map"></div>
 					</section>
-					<section class="col-xs-12 col-sm-12 col-md-5" id="where_info">
+					<section class="col-xs-12 col-md-5" id="where_info">
 						<div class="row where_info">
 							<section class="col-xs-2">
 								<span class="fa fa-bus fa-3x">
@@ -173,6 +124,84 @@
 								Ingresso e parcheggio prioritario per disabili e mamme in attesa in via Paradiso
 							</section>
 						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<div id="team_bg_image">
+			<div class="container" id="team">
+				<div class="row title_box">
+					<div class="col-xs-12">
+						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>il team<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
+					</div>
+				</div>
+				<div class="row h_scroll">
+				<?php
+					require 'doctors.php';
+					$doct = new Doctors;
+					$doct->get_all_doctors();
+					foreach($doct->doctors as $doctor){
+						echo "<section class='col-xs-6 col-sm-3 team_box h_scroll_box'>";
+						echo "<img class='img-thumbnail img-responsive' src='./images/services/1.jpg'>";
+						echo "<h4 class='text-capitalize'><a href='{$doctor->curriculum_path}' class ='link'>";
+						if(strcmp($doctor->gender,'M')==0){
+							echo "Dr.";
+						}else{
+							echo "Dr. ssa";
+						}
+						echo " {$doctor->last_name} {$doctor->first_name}</a></h4>";
+						echo "</section>";
+					}
+				?>
+				</div>
+			</div>
+		</div>
+		<div id="contacts_bg_image">
+			<div class="container" id="contacts">
+				<div class="row title_box">
+					<div class="col-xs-12">
+						<h3 class="text_stand_out text-center">contatti</h3>
+					</div>
+				</div>
+				<div class="row">
+					<section class="col-xs-12 col-md-5" id="contacts_info">
+						<div class="text-capitalize row contacts_info">
+							<div class="col-xs-2">
+								<span class="fa fa-clock-o fa-3x"></span>
+							</div>
+							<div class="col-xs-10">
+								Lunedi' - Venerdi': 7:30 / 19:00.</br>
+								Sabato: 7:30 / 11:00.</br>
+								Analisi del Sangue: Lunedi' - Sabato, 7:30 / 8:45</br>
+							</div>
+						</div>
+						<div class="row contacts_info">
+							<div class="col-xs-2">
+								<span class="fa fa-phone-square fa-3x"></span>
+							</div>
+							<div class="col-xs-10">
+								+39 0341 1695111
+							</div>
+						</div>
+						<div class="row contacts_info">
+							<div class="col-xs-2">
+								<span class="fa fa-paper-plane fa-3x"></span>
+							</div>
+							<div class="col-xs-10">
+								info@clinicasmartino.it
+							</div>
+						</div>
+						<div class="row contacts_info">
+							<div class="col-xs-2">
+								<span class="fa fa-facebook-official fa-3x"></span>
+							</div>
+							<div class="col-xs-10">
+								<a class="link" href="https://www.facebook.com/clinicasmartinomalgrate/"> Visita La Nostra Pagina Facebook</a>
+							</div>
+						</div>
+					</section>
+					<section class="hidden-xs hidden-sm col-md-7" id="contacts_photo">
+						<img class="img-responsive img-rounded img-thumbnail" src="./images/contact/1.jpg">
 					</section>
 				</div>
 			</div>

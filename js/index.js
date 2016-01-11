@@ -3,18 +3,43 @@ DEPENDENCIES: maps.js, map_styles.js (if any styles are used)
 */
 
 /*
-* Show hide bar when scrolling
+* Scroll to section navbar link
 */
-var y_position=0;
+$(".navbar a").click(function(){
+	$('html,body').animate({
+		scrollTop: $($(this).data('section')).offset().top
+	},'slow');
+});
+
+/*
+* Add scroll to top functionality
+*/
+$("#scroll_top").click(function(){
+	$('html,body').animate({
+		scrollTop: 0
+	},500);
+});
+
+/*
+* Show/Hide scroll to top
+*/
 $(window).scroll(function(){
-	new_y_position = $('.navbar').offset().top;
-	if(y_position < new_y_position){
-		$('.navbar').fadeOut();
-		y_position = new_y_position;
+	y_position = $(window).scrollTop();
+	if(y_position>=200){
+		$('#scroll_top').fadeIn();
 	}else{
-		$('.navbar').fadeIn();
-		y_position = new_y_position;
+		$('#scroll_top').fadeOut();
 	}
+});
+
+/*
+* Add scroll functionality to arrows
+*/
+$('.left_scroll_arrow').click(function(){
+	$(".h_scroll").animate({scrollLeft:'-='+$('.h_scroll_box').width()}, 1000);;
+});
+$('.right_scroll_arrow').click(function(){
+	$(".h_scroll").animate({scrollLeft:'+='+$('.h_scroll_box').width()}, 1000);
 });
 
 /*
@@ -34,13 +59,3 @@ create_marker(map,options);
 $('.ellipsed_text').each(function(){
 	$(this).html(dotdotdot($(this).html(),150));
 })
-
-/*
-* Add scroll functionality to arrows
-*/
-$('#left_scroll_arrow').click(function(){
-	$(".h_scroll").animate({scrollLeft:'-='+$('.services_box').width()+10}, 1000);;
-});
-$('#right_scroll_arrow').click(function(){
-	$(".h_scroll").animate({scrollLeft:'+='+$('.services_box').width()+10}, 1000);
-});
