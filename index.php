@@ -1,14 +1,20 @@
+<?php
+	require 'doctors.php';
+	$db = new Database('it');
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link href='https://fonts.googleapis.com/css?family=Antic+Slab:400,600' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/layout.css">	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<title>Clinica San Martino</title>
 	</head>
 
@@ -137,13 +143,12 @@
 				</div>
 				<div class="row h_scroll">
 				<?php
-					require 'doctors.php';
-					$doct = new Doctors;
+					$doct = new Doctors($db);
 					$doct->get_all_doctors();
 					foreach($doct->doctors as $doctor){
 						echo "<section class='col-xs-6 col-sm-3 team_box h_scroll_box'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/services/1.jpg'>";
-						echo "<h4 class='text-capitalize'><a href='{$doctor->curriculum_path}' class ='link'>";
+						echo "<h4 class='text-capitalize'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
 						if(strcmp($doctor->gender,'M')==0){
 							echo "Dr.";
 						}else{
@@ -213,6 +218,7 @@
 		<script type="text/javascript" src="./js/maps.js"></script>
 		<script type="text/javascript" src="./js/format.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
+		<script type="text/javascript" src="./js/layout.js"></script>
 	</body>
 
 </html>

@@ -1,3 +1,12 @@
-1) Corta biografia per ogni medico (In Lingue diverse?? Italiano/Inglese)
-2) Foto per ogni medico. ratio 1 altezza, 1.5 larghezza.
-3) lista nomi di ogni dipartimento
+- Corta descrizione per ogni medico (In Lingue diverse?? Italiano/Inglese). 500 caratteri circa
+- Foto per ogni medico. ratio 1 altezza, 1.5 larghezza.
+- Molte dei curriculum non sono adeguati.
+- foto per pagine team. Medici in camice che sorridono, del tipo: 
+	http://static3.depositphotos.com/1001992/151/i/950/depositphotos_1514604-Happy-smiling-doctors-and-surgeons.jpg
+	deve essere piu' lunga che alta perche' deve servire da copertina!
+	che non abbia uno sfondo bianco perche' e' difficile vedere le nostre scritte!
+
+- testo per la copertina della pagina team. Qualcosa del tipo:
+					I Nostri Medici
+					Professionalita' e Passione
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

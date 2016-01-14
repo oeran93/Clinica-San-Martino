@@ -10,6 +10,7 @@ a:hover{
 }a:visited{
 	text-decoration: none;
 }a:focus{
+	color:white !important;
 	text-decoration: none;
 }
 .link{
@@ -19,6 +20,9 @@ a:hover{
 }
 .link:visited{
 	color: rgba(0,17,26,1) !important;
+}
+.link:focus{
+	color: rgba(0,17,26,1) !important;	
 }
 .title_box{
 	padding:30px 0 30px 0;
@@ -114,65 +118,6 @@ a:hover{
 }
 .left_scroll_arrow{
 	float:left;
-}
-
-/*ALL SECTIONS*/
-#contacts,#services,#where,#team{
-	padding-bottom: 30px;
-}
-
-/*HEADER*/
-#header_bg_image{
-	background-image: url("../images/bg/1.jpg");
-	background-position: center center;
-	background-size: cover;
-}
-@media (min-width: 768px){
-	#header_bg_image{
-		height: 550px;	
-	}
-}
-#header_description{
-	margin-top: 0px;
-	color:white;
-}
-
-/*WHERE*/
-#where_map{
-	height:400px;
-}
-#map{
-	height:100%;
-	width:100%;
-	border-radius: 3px;
-}
-.where_info{
-	padding:18px 0 18px 0;
-}
-@media (min-width: 992px){
-	.where_info:first-child, .contacts_info:first-child{
-		padding-top:0;
-	}	
-}
-#where span{
-	color:rgba(  5, 131, 198,1);
-}
-
-/*CONTATTI*/
-#contacts_bg_image{
-	/*background-image: url("../images/contact/bg.png");
-	background-position: center center;
-	background-size: cover;*/
-}
-#contacts img{
-	height:100%;
-	width:100%;
-}
-.contacts_info{
-	padding:30px 0 30px 0;
-}
-#contacts_info span{
-	color:rgba(  5, 131, 198,1);
 }
 
 /* CSS - Cascading Style Sheet */
