@@ -21,7 +21,7 @@ function create_map(options) {
 }
 
 /*
-* creates a marker and puts it on a map
+* creates a marker, puts it on a map and returns it
 * Options must contain:
     lat, lng
 */
@@ -30,4 +30,11 @@ function create_marker(map, options){
         position:{lat:options.lat, lng:options.lng},
         map: map
     });
+    if(typeof options.infowindow!='undefined'){
+      options.infowindow.open(map,marker);
+      marker.addListener('click',function(){
+        options.infowindow.open(map,marker);
+      });
+    }
+    return marker
 }

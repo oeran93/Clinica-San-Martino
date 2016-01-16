@@ -1,6 +1,7 @@
 <?php
-	require 'doctors.php';
-	$db = new Database('it');
+	include_once './models/doctors.php';
+	include_once './models/departments.php';
+	$db = new Database('en');
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +56,17 @@
 					</div>
 				</div>
 				<div class="row h_scroll">
-					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
+					<?php
+						$departments = new Departments($db);
+						$departments->get_all_departments();
+						foreach ($departments->departments as $department) {
+							echo "<section class='col-xs-6 col-sm-3 h_scroll_box h_scroll_box'>";
+								echo "<img class='img-thumbnail img-responsive' src='./images/departments/{$department->image}'>";
+								echo "<h4 class='text-capitalize'><a href='#' class='link'>{$department->name}</a></h4>";
+							echo "</section>";
+						}
+					?>
+					<!-- <section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class=" img-thumbnail img-responsive"src="./images/services/1.jpg">
 						<h4 class="text-capitalize"><a href="#" class="link">radiologia e servizi diagnostici</a></h4>
 					</section>
@@ -74,7 +85,7 @@
 					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
 						<img class="img-thumbnail img-responsive"src="./images/services/1.jpg">
 						<h4 class="text-capitalize"><a href="#" class="link">Odontoiatria e Ortodonzia</a></h4>
-					</section>
+					</section> -->
 				</div>
 			</div>
 		</div>
@@ -147,7 +158,7 @@
 					$doct->get_all_doctors();
 					foreach($doct->doctors as $doctor){
 						echo "<section class='col-xs-6 col-sm-3 team_box h_scroll_box'>";
-						echo "<img class='img-thumbnail img-responsive' src='./images/services/1.jpg'>";
+						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
 						echo "<h4 class='text-capitalize'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
 						if(strcmp($doctor->gender,'M')==0){
 							echo "Dr.";

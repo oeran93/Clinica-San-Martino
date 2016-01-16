@@ -1,5 +1,5 @@
 <?php
-	require 'doctors.php';
+	include_once './models/doctors.php';
 	$db = new Database('it');
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,22 @@
 <body>
 	<span class="text-capitalize" id="scroll_top"><p>Torna in alto</p></span>
 	<div id="header_bg_image">
-		<?php include_once('_navbar.php'); ?>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#collapsemenu">
+					<span class="fa fa-bars fa-2x"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsemenu">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="text_stand_out" href="./index.php#services" >Servizi</a></li>
+						<li><a class="text_stand_out" href="./index.php#where">Dove Siamo</a></li>
+						<li><a class="text_stand_out active" href="#">Il Team</a></li>
+						<li><a class="text_stand_out" href="./index.php#contacts">Contatti</a></li>
+					</ul>
+				</div>
+			</div>	
+		</nav>
 		<div class="container hidden-xs" id="header">
 			<div class="row">
 				<section class="col-sm-5 col-md-4" id="header_description">
@@ -41,9 +56,9 @@
 			$doct = new Doctors($db);
 			$doct->get_all_doctors();
 			foreach($doct->doctors as $doctor){
-				echo "<div class='row doctor'>";
+				echo "<div class='row doctor' id='{$doctor->first_name}{$doctor->last_name}'>";
 					echo "<section class='col-xs-6 col-md-3' class='picture'>";
-						echo "<img class='img-thumbnail img-responsive' src='./images/services/1.jpg'>";
+						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
 					echo "</section>";
 					echo "<section class='row infos col-xs-6 col-md-9'>";
 						echo "<section class='col-xs-12'>";
