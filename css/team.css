@@ -1,19 +1,7 @@
 /*HEADER*/
 #header_bg_image{
 	background-image: url("../images/bg/2.jpg");
-	background-position: top center;
-	background-size: cover;
 }
-@media (min-width: 768px){
-	#header_bg_image{
-		height: 450px;
-	}
-}
-#header_description{
-	margin-top: 0px;
-	color:white;
-}
-
 .doctor{
 	padding-top: 20px;
 	padding-bottom: 20px;

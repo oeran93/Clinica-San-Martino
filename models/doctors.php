@@ -1,5 +1,5 @@
 <?php
-include_once 'doctor.php';
+include_once './models/doctor.php';
 
 /*
 * Allows to hold multiple doctors and perform operation on multiple doctors.
@@ -23,32 +23,59 @@ class Doctors extends Doctor{
 	* retrieves all doctors from the database and saves them in the
 	* $doctors array class variable as Doctor objects.
 	*/
-	public function get_all_doctors(){
-		$ids = $this->get_all_doctors_ids();
-		foreach ($ids as $id) {
+	public function get_all(){
+		$conn = $this->db->conn;
+		try{
+			$query = $conn->prepare("CALL get_all_doctors(?)");
+			$query->execute(array($this->db->lang));
+		}catch(PDOException $e){
+			echo "Error: " . $e;
+		}
+		while($row = $query->fetch(PDO::FETCH_ASSOC)){
 			$doctor = new Doctor($this->db);
-			$doctor->get_doctor_by_id($id);
+			$doctor->update_class($row);
+			array_push($this->doctors, $doctor);
+		}	
+	}
+
+	/*
+	* retrieves all doctors in a certain department and saves them in the
+	* $doctors array class variable as Doctor objects.
+	* @param string $dep id of the department
+	*/
+	public function get_by_department($dep){
+		$conn = $this->db->conn;
+		try{
+			$query = $conn->prepare("CALL get_doctors_by_department(?,?)");
+			$query->execute(array($dep,$this->db->lang));
+		}catch(PDOException  $e){
+			echo "Error: " . $e;
+		}
+		while($row = $query->fetch(PDO::FETCH_ASSOC)){
+			$doctor = new Doctor($this->db);
+			$doctor->update_class($row);
 			array_push($this->doctors, $doctor);
 		}
 	}
 
 	/*
-	*Retrieves all doctor's ids from the db.
-	* @return $ids array
+	* retrieves all doctors in a certain ambulatory and saves them in the
+	* $doctors array class variable as Doctor objects.
+	* @param string $dep id of the ambulatory
 	*/
-	private function get_all_doctors_ids(){
+	public function get_by_ambulatory($amb){
 		$conn = $this->db->conn;
-		$ids = array();
 		try{
-			$query = $conn->prepare("SELECT D.ID FROM Doctors as D");
-			$query->execute();
+			$query = $conn->prepare("CALL get_doctors_by_ambulatory(?,?)");
+			$query->execute(array($amb,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;
 		}
 		while($row = $query->fetch(PDO::FETCH_ASSOC)){
-			array_push($ids, $row['ID']);
+			$doctor = new Doctor($this->db);
+			$doctor->update_class($row);
+			array_push($this->doctors, $doctor);
 		}
-		return $ids;
 	}
 
 }

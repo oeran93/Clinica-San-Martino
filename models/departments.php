@@ -1,5 +1,5 @@
 <?php
-include_once 'department.php';
+include_once './models/department.php';
 
 /*
 * Allows to hold multiple departments and perform operation on multiple departments.
@@ -23,32 +23,38 @@ class Departments extends Department{
 	* retrieves all departments from the database and saves them in the
 	* $departments array class variable as Department objects.
 	*/
-	public function get_all_departments(){
-		$ids = $this->get_all_departments_ids();
-		foreach ($ids as $id) {
-			$department = new Department($this->db);
-			$department->get_department_by_id($id);
-			array_push($this->departments, $department);
-		}
-	}
-
-	/*
-	*Retrieves all department's ids from the db.
-	* @return $ids array
-	*/
-	private function get_all_departments_ids(){
+	public function get_all(){
 		$conn = $this->db->conn;
-		$ids = array();
 		try{
-			$query = $conn->prepare("SELECT D.ID FROM Departments as D");
-			$query->execute();
-		}catch(PDOException  $e){
+			$query = $conn->prepare("CALL get_all_departments(?)");
+			$query->execute(array($this->db->lang));
+		}catch(PDOException $e){
 			echo "Error: " . $e;
 		}
 		while($row = $query->fetch(PDO::FETCH_ASSOC)){
-			array_push($ids, $row['ID']);
+			$department = new Department($this->db);
+			$department->update_class($row);
+			array_push($this->departments, $department);
+		}	
+	}
+
+	/*
+	* Gets all the departments a doctor belongs to
+	* @param $id id of the doctor
+	*/
+	public function get_by_doctor($id){
+		$conn = $this->db->conn;
+		try{
+			$query = $conn->prepare("CALL get_departments_by_doctor(?,?)");
+			$query->execute(array($id, $this->db->lang));
+		}catch(PDOException $e){
+			echo "Error: " . $e;
 		}
-		return $ids;
+		while($row = $query->fetch(PDO::FETCH_ASSOC)){
+			$department = new Department($this->db);
+			$department->update_class($row);
+			array_push($this->departments, $department);
+		}	
 	}
 
 }

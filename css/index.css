@@ -1,22 +1,12 @@
-/*ALL SECTIONS*/
-#contacts,#services,#where,#team{
-	padding-bottom: 30px;
-}
-
 /*HEADER*/
 #header_bg_image{
+	height: 550px;	
 	background-image: url("../images/bg/1.jpg");
-	background-position: center center;
-	background-size: cover;
-}
-@media (min-width: 768px){
-	#header_bg_image{
-		height: 550px;	
-	}
 }
 #header_description{
-	margin-top: 0px;
 	color:white;
+	background-color: transparent;
+	margin-top: 90px;
 }
 
 /*WHERE*/
@@ -41,13 +31,7 @@
 }
 
 /*CONTATTI*/
-#contacts_bg_image{
-	/*background-image: url("../images/contact/bg.png");
-	background-position: center center;
-	background-size: cover;*/
-}
 #contacts img{
-	height:100%;
 	width:100%;
 }
 .contacts_info{

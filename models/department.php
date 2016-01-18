@@ -1,12 +1,13 @@
 <?php
 
-include_once 'database.php';
+include_once './models/database.php';
 
 class Department{
 
 	public $id;
 	public $name;
 	public $image;
+	public $acronim;
 	protected $db;
 
 	/*
@@ -21,7 +22,7 @@ class Department{
 	* retrieves all the information about a department given its ID
 	* @param int $id
 	*/
-	public function get_department_by_id($id){
+	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
 			$query = $conn->prepare("CALL get_department_by_id(?,?)");
@@ -40,6 +41,7 @@ class Department{
 		$this->id = $department['ID'];
 		$this->name = $department['Name'];
 		$this->image = $department['Image'];
+		$this->acronim = $department['Acronim'];
 	}
 }
 ?>

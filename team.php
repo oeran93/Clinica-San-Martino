@@ -1,6 +1,8 @@
 <?php
+	include_once './generics.php';
 	include_once './models/doctors.php';
-	$db = new Database('it');
+	include_once './models/departments.php';
+	$db = new Database($lang);
 ?>
 <!DOCTYPE html>
 
@@ -18,44 +20,19 @@
 	<title class="text-capitalize">Il Team</title>
 </head>
 <body>
-	<span class="text-capitalize" id="scroll_top"><p>Torna in alto</p></span>
 	<div id="header_bg_image">
-		<nav class="navbar navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#collapsemenu">
-					<span class="fa fa-bars fa-2x"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="collapsemenu">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a class="text_stand_out" href="./index.php#services" >Servizi</a></li>
-						<li><a class="text_stand_out" href="./index.php#where">Dove Siamo</a></li>
-						<li><a class="text_stand_out active" href="#">Il Team</a></li>
-						<li><a class="text_stand_out" href="./index.php#contacts">Contatti</a></li>
-					</ul>
-				</div>
-			</div>	
-		</nav>
-		<div class="container hidden-xs" id="header">
-			<div class="row">
-				<section class="col-sm-5 col-md-4" id="header_description">
-					<h2 class="text-capitalize">I Nostri Medici</h2>
-					<h4 class="text-capitalize">professionalita' e passione</h4>
-					<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq. La crescita demografica dell’intera provincia negli ultimi 10 anni si è assestata attorno al 9,1 %, annuo  rendendo la provincia di Lecco una delle più popolose </span><a class="link" href="">continua</a>
-				</section>
-			</div>
-		</div>
+		<?php include_once("./_navbar.php");?>
 	</div>
-	<div class="container" id="team_list">
+	<div class="container page_section" id="team_list">
 		<div class="row title_box">
 			<div class="col-xs-12">
 				<h3 class="text_stand_out text-center">Incontra il nostro team</h3>
 			</div>
 		</div>
 		<?php
-			$doct = new Doctors($db);
-			$doct->get_all_doctors();
-			foreach($doct->doctors as $doctor){
+			$doctors = new Doctors($db);
+			$doctors->get_all();
+			foreach($doctors->doctors as $doctor){
 				echo "<div class='row doctor' id='{$doctor->first_name}{$doctor->last_name}'>";
 					echo "<section class='col-xs-6 col-md-3' class='picture'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
@@ -69,10 +46,13 @@
 								echo "Dr. ssa";
 							}
 							echo " {$doctor->first_name} {$doctor->last_name}</a></h3>";
-							$department = $doctor->departments[0];
-							echo "<h5>$department</h5>";
+							$departments = new Departments($db);
+							$departments->get_by_doctor($doctor->id);
+							foreach ($departments->departments as $department) {
+								echo " <span class='link h5'><a href='./department.php?ID={$department->id}'>{$department->name}</a></span>";
+							}
 						echo "</section>";
-						echo "<section class='col-xs-12'>{$doctor->description}</section>";
+						echo "<section class='col-xs-12'>".get_text_from_file("./descriptions/doctors/$lang/".strtolower($doctor->last_name.$doctor->first_name).".txt")."</section>";
 					echo "</section>";
 				echo "</div>";
 			}

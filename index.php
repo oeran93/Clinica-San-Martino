@@ -1,7 +1,8 @@
 <?php
+	include_once './generics.php';
 	include_once './models/doctors.php';
 	include_once './models/departments.php';
-	$db = new Database('en');
+	$db = new Database($lang);
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +21,8 @@
 	</head>
 
 	<body>
-		<span class="text-capitalize" id="scroll_top"><p>Torna in alto</p></span>
 		<div id="header_bg_image">
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 					<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#collapsemenu">
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 		<div id="services_bg_image">
-			<div class="container" id="services">
+			<div class="container page_section" id="services">
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>servizi<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
@@ -58,39 +58,19 @@
 				<div class="row h_scroll">
 					<?php
 						$departments = new Departments($db);
-						$departments->get_all_departments();
+						$departments->get_all();
 						foreach ($departments->departments as $department) {
 							echo "<section class='col-xs-6 col-sm-3 h_scroll_box h_scroll_box'>";
 								echo "<img class='img-thumbnail img-responsive' src='./images/departments/{$department->image}'>";
-								echo "<h4 class='text-capitalize'><a href='#' class='link'>{$department->name}</a></h4>";
+								echo "<h5 class='text-capitalize h_scroll_text'><a href='./department.php?ID={$department->id}' class='link'>{$department->name}</a></h5>";
 							echo "</section>";
 						}
 					?>
-					<!-- <section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
-						<img class=" img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4 class="text-capitalize"><a href="#" class="link">radiologia e servizi diagnostici</a></h4>
-					</section>
-					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
-						<img class="img-thumbnail img-responsive"src="./images/services/2.jpg">
-						<h4 class="text-capitalize"><a href="#" class="link">Ambulatori Specialistici</a></h4>
-					</section>
-					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
-						<img class="img-thumbnail img-responsive"src="./images/services/3.jpg">
-						<h4 class="text-capitalize"><a href="#" class="link">Chirurgia Maxillo-Facciale</a></h4>
-					</section>
-					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
-						<img class="img-thumbnail img-responsive"src="./images/services/4.jpg">
-						<h4 class="text-capitalize"><a href="#" class="link">Implantologia Dentale</a></h4>
-					</section>
-					<section class="col-xs-6 col-sm-3 h_scroll_box h_scroll_box">
-						<img class="img-thumbnail img-responsive"src="./images/services/1.jpg">
-						<h4 class="text-capitalize"><a href="#" class="link">Odontoiatria e Ortodonzia</a></h4>
-					</section> -->
 				</div>
 			</div>
 		</div>
 		<div id="where_bg_image">
-			<div class="container" id="where">
+			<div class="container page_section" id="where">
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center">dove siamo</h3>
@@ -146,7 +126,7 @@
 			</div>
 		</div>
 		<div id="team_bg_image">
-			<div class="container" id="team">
+			<div class="container page_section" id="team">
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>il team<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
@@ -155,17 +135,17 @@
 				<div class="row h_scroll">
 				<?php
 					$doct = new Doctors($db);
-					$doct->get_all_doctors();
+					$doct->get_all();
 					foreach($doct->doctors as $doctor){
-						echo "<section class='col-xs-6 col-sm-3 team_box h_scroll_box'>";
+						echo "<section class='col-xs-6 col-sm-3 h_scroll_box'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
-						echo "<h4 class='text-capitalize'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
+						echo "<span class='text-capitalize h_scroll_text'><a class='link' href='./team.php#{$doctor->first_name}{$doctor->last_name}'>";
 						if(strcmp($doctor->gender,'M')==0){
 							echo "Dr.";
 						}else{
 							echo "Dr. ssa";
 						}
-						echo " {$doctor->last_name} {$doctor->first_name}</a></h4>";
+						echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
 						echo "</section>";
 					}
 				?>
@@ -173,7 +153,7 @@
 			</div>
 		</div>
 		<div id="contacts_bg_image">
-			<div class="container" id="contacts">
+			<div class="container page_section" id="contacts">
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center">contatti</h3>
