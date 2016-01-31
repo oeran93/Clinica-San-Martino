@@ -14,7 +14,7 @@
 					$doctors = new Doctors($db);
 					$doctors->get_by_ambulatory($ambulatory->id);
 					foreach ($doctors->doctors as $doctor) {
-						echo " <span class='link h5'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}'>{$department->name}</a></span>";
+						echo " <span class='link h5'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}'>{$doctor->first_name} {$doctor->last_name} |</a></span>";
 					}
 				echo "</section>";
 				echo "<section class='col-xs-12 ellipsed_text' data-text_length='300'>".get_text_from_file("./descriptions/ambulatories/$lang/".strtolower($ambulatory->acronim).".txt")."</section>";

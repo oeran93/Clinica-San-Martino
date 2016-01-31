@@ -1,10 +1,8 @@
-<section class="section visible-xs col-xs-12"><?php echo get_text_from_file("./descriptions/departments/$lang/".strtolower($department->acronim.".txt"))?>
-</section>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/chirurgia_ortognatica.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/chirurgia_ortognatica.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Orthognatic Surgery</div>
 		<ul>
 			<li>Correction of dental skeletal malocclusions (mandible’s extension or shortening and jaw-bones extension)</li>
@@ -21,10 +19,10 @@
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/chirurgia_nasale.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/chirurgia_nasale.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Nose Surgery </div>
 		<ul>
 			<li>Functional and esthetical Rhynoplasty</li>
@@ -34,38 +32,38 @@
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/chirurgia_dell_orecchio.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/chirurgia_dell_orecchio.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Ear Surgery </div>
 		Otoplasty ( correction of protruding hears)
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/chirurgia_facciale.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/chirurgia_facciale.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Facial Traumatology </div>
-		Treatment of facial bones breaking and minor deformities
-		Correction of soft tissues and skin deformities further to facial traumas
+		<li>Treatment of facial bones breaking and minor deformities</li>
+		<li>Correction of soft tissues and skin deformities further to facial traumas</li>
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/chirurgia_delle_ghiandole_salivari.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/chirurgia_delle_ghiandole_salivari.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Salivary glands surgery </div>
 		Salivary glands stone removal
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
-		<img src="./pages/cmf/images/day_surgery.png">
+	<div class="col-xs-2">
+		<img src="./images/pages/cmf/day_surgery.png">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		<div class="section_title"> Day Surgery </div>
 		 A team of high experienced anesthetists-resuscitation specialists cooperates routinely with Dr. Pedretti allowing minor surgeries under local and locoregional anesthesia in conscious sedation by inhalation or injection.
 
@@ -76,9 +74,9 @@
 	</div>
 </div>
 <div class="row section">
-	<div class="col-xs-3">
+	<div class="col-xs-2">
 	</div>
-	<div class="col-xs-9">
+	<div class="col-xs-10">
 		Visit <a href="http://www.gpedretti.pro">Dr. Pedretti’s official website</a>
 	</div>
 </div>

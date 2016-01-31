@@ -2,6 +2,7 @@
 	include_once './generics.php';
 	include_once './models/doctors.php';
 	include_once './models/departments.php';
+	include_once './models/ambulatories.php';
 	$db = new Database($lang);
 ?>
 <!DOCTYPE html>
@@ -39,7 +40,7 @@
 					echo "</section>";
 					echo "<section class='row infos col-xs-6 col-md-9'>";
 						echo "<section class='col-xs-12'>";
-							echo "<h3><span class='fa fa-download fa'></span> <a href='{$doctor->curriculum}' class='link'>";
+							echo "<h3><span class='fa fa-download fa'></span> <a href='./curricula/$lang/{$doctor->curriculum}' class='link'>";
 							if(strcmp($doctor->gender,'M')==0){
 								echo "Dr.";
 							}else{
@@ -49,7 +50,12 @@
 							$departments = new Departments($db);
 							$departments->get_by_doctor($doctor->id);
 							foreach ($departments->departments as $department) {
-								echo " <span class='link h5'><a href='./department.php?ID={$department->id}'>{$department->name}</a></span>";
+								echo " <span class='h5'><a class='link' href='./department.php?ID={$department->id}'>{$department->name}</a></span> |";
+							}
+							$ambulatories = new Ambulatories($db);
+							$ambulatories->get_by_doctor($doctor->id);
+							foreach ($ambulatories->ambulatories as $ambulatory) {
+								echo " <span class='h5'><a class='link' href='./ambulatory.php?ID={$ambulatory->id}'>{$ambulatory->name}</a></span> |";
 							}
 						echo "</section>";
 						echo "<section class='col-xs-12'>".get_text_from_file("./descriptions/doctors/$lang/".strtolower($doctor->last_name.$doctor->first_name).".txt")."</section>";

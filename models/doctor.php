@@ -32,8 +32,8 @@ class Doctor {
 	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_doctor_by_id(?,?)");
-			$query->execute(array($id,$this->db->lang));
+			$query = $conn->prepare("CALL get_doctor_by_id(?)");
+			$query->execute(array($id));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;
 		}

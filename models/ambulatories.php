@@ -51,7 +51,7 @@ class Ambulatories extends Ambulatory{
 			echo "Error: " . $e;
 		}
 		while($row = $query->fetch(PDO::FETCH_ASSOC)){
-			$ambulatory = new ambulatorie($this->db);
+			$ambulatory = new ambulatory($this->db);
 			$ambulatory->update_class($row);
 			array_push($this->ambulatories, $ambulatory);
 		}	

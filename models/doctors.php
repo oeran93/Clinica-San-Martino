@@ -26,8 +26,8 @@ class Doctors extends Doctor{
 	public function get_all(){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_all_doctors(?)");
-			$query->execute(array($this->db->lang));
+			$query = $conn->prepare("CALL get_all_doctors()");
+			$query->execute();
 		}catch(PDOException $e){
 			echo "Error: " . $e;
 		}

@@ -8,14 +8,24 @@ body{
 h1, h2, h3, h4, h5, h6 {
 	margin:0;
 }
+a{
+	text-decoration: none;
+}
+a:focus,a:visited{
+	text-decoration: none;
+	color: rgba(  5, 131, 198,1);
+}
 .link{
-	color: rgba(0,17,26,1);
+	color: rgba(  5, 131, 198,1);
+}
+.link:hover{
+	color:rgba(  5, 131, 198,1) !important;
 }
 .link:visited{
-	color: rgba(0,17,26,1) !important;
+	color: rgba(  5, 131, 198,1) !important;
 }
 .link:focus{
-	color: rgba(0,17,26,1) !important;	
+	color: rgba(  5, 131, 198,1) !important;	
 }
 .title_box{
 	padding-bottom:40px;
@@ -32,11 +42,15 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 60px;
 	border:0;
 	border-radius: 0;
-	background-color: rgba(  5, 131, 198,.7);
+	background: rgba(  255, 255, 255,.8);
+    background: -webkit-linear-gradient(left top, rgba(0,0,0,0), rgba(255, 255, 255,.8));
+    background: -o-linear-gradient(left top, rgba(0,0,0,0), rgba(255, 255, 255,.8));
+    background: -moz-linear-gradient(left top, rgba(0,0,0,0), rgba(255, 255, 255,.8));
+    background: linear-gradient(left top, rgba(0,0,0,0), rgba(255, 255, 255,.8));
 }
 .navbar-default .navbar-nav>li>a{
 	font-weight: 600;
-	color:rgba(255,255,255,1);
+	color: rgba(  5, 131, 198,1);
 	line-height: 30px;
 	border-bottom: 2px solid transparent;
 }
@@ -60,11 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 	}	
 }
 .navbar-toggle{
-	color:rgba(255,255,255,1);
+	color:rgba(  5, 131, 198,1);
 	border:0;
 }.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
 	background-color: transparent;
-	color:rgba(255,255,255,1);
+	color:rgba(  5, 131, 198,1);
 }
 
 /*HEADER*/
