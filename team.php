@@ -34,7 +34,8 @@
 			$doctors = new Doctors($db);
 			$doctors->get_all();
 			foreach($doctors->doctors as $doctor){
-				echo "<div class='row doctor' id='{$doctor->first_name}{$doctor->last_name}'>";
+				echo "<div class='row doctor'>";
+					echo "<div class='anchor' id='{$doctor->first_name}{$doctor->last_name}'></div>";
 					echo "<section class='col-xs-6 col-md-3' class='picture'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
 					echo "</section>";

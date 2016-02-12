@@ -1,5 +1,5 @@
 <?php
-	$lang = 'it';
+	$lang = 'en';
 
 	/*
 	* extracts text from a file.

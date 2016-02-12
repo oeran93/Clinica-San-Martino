@@ -1,0 +1,15 @@
+@media (max-width: 767px){
+	section{
+		text-align: center;
+	}
+	section img{
+		max-height:150px;
+		max-width:150px;
+	}
+
+	ul{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}	
+}

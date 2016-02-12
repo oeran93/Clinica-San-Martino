@@ -29,7 +29,7 @@
 	</div>
 	<div class="container page_section">
 		<div class="row">
-			<section class="department_description col-xs-12">
+			<section class="department_description col-xs-offset-1 col-xs-10">
 				<div class="title_box col-xs-12">
 					<h3 class="text_stand_out text-center"><?php echo $department->name ?></h3>
 				</div>
@@ -37,12 +37,12 @@
 				<?php echo get_text_from_file("./descriptions/departments/$lang/".strtolower($department->acronim.".txt"))?>
 				</div>
 			</section>
-			<section class ="section col-xs-12 col-md-9">
+			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
 				<div class="col-xs-12">
 					<?php include_once("./pages/".strtolower($department->acronim)."/$lang/_".strtolower($department->acronim).".php") ?>
 				</div>
 			</section>
-			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-3">
+			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
 				<div class="title_box col-xs-12">
 					<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
 				</div>

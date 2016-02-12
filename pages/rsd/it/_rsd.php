@@ -68,7 +68,6 @@
 		<ul>
 			<li>Ecografia Internistica</li>
 			<li>Ecografia Cardiologica (Ecocardio)</li>
-			<li></li>
 			<li>Test Cardiovascolare da Sforzo con Cicloergometro</li>
 			<li>Ecografia Urologica (Reni, Vescica)</li>
 			<li>Ecografia Addome</li>
