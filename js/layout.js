@@ -4,10 +4,10 @@
 * Add scroll functionality to arrows
 */
 $('.left_scroll_arrow').click(function(){
-	$(".h_scroll").animate({scrollLeft:'-='+$('.h_scroll_box').width()}, 1000);;
+	$($(this).data("id")).animate({scrollLeft:'-='+$('.h_scroll_box').width()}, 1000);;
 });
 $('.right_scroll_arrow').click(function(){
-	$(".h_scroll").animate({scrollLeft:'+='+$('.h_scroll_box').width()}, 1000);
+	$($(this).data("id")).animate({scrollLeft:'+='+$('.h_scroll_box').width()}, 1000);
 });
 
 /*

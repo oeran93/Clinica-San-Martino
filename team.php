@@ -3,7 +3,11 @@
 	include_once './models/doctors.php';
 	include_once './models/departments.php';
 	include_once './models/ambulatories.php';
+	include_once './content_extractor.php';
+
 	$db = new Database($lang);
+
+	$content_extractor = new ContentExtractor("content/$lang/team.xml");
 ?>
 <!DOCTYPE html>
 
@@ -30,16 +34,17 @@
 				<h3 class="text_stand_out text-center">Incontra il nostro team</h3>
 			</div>
 		</div>
+		<div class="section col-xs-12 col-md-offset-1 col-md-10">
 		<?php
 			$doctors = new Doctors($db);
 			$doctors->get_all();
 			foreach($doctors->doctors as $doctor){
 				echo "<div class='row doctor'>";
 					echo "<div class='anchor' id='{$doctor->first_name}{$doctor->last_name}'></div>";
-					echo "<section class='col-xs-6 col-md-3' class='picture'>";
+					echo "<section class='col-xs-offset-2 col-sm-offset-0 col-xs-8 col-sm-6 col-md-3'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
 					echo "</section>";
-					echo "<section class='row infos col-xs-6 col-md-9'>";
+					echo "<section class='row infos col-xs-12 col-sm-6 col-md-9'>";
 						echo "<section class='col-xs-12'>";
 							echo "<h3><span class='fa fa-download fa'></span> <a href='./curricula/$lang/{$doctor->curriculum}' class='link'>";
 							if(strcmp($doctor->gender,'M')==0){
@@ -59,11 +64,12 @@
 								echo " <span class='h5'><a class='link' href='./ambulatory.php?ID={$ambulatory->id}'>{$ambulatory->name}</a></span> |";
 							}
 						echo "</section>";
-						echo "<section class='col-xs-12'>".get_text_from_file("./descriptions/doctors/$lang/".strtolower($doctor->last_name.$doctor->first_name).".txt")."</section>";
+						echo "<section class='col-xs-12'>".$content_extractor->get_section(strtolower($doctor->first_name.$doctor->last_name),"Download ".$doctor->last_name."'s curriculum to know more.")."</section>";
 					echo "</section>";
 				echo "</div>";
 			}
 		?>
+		</div>
 	</div>
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
