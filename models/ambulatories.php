@@ -26,7 +26,11 @@ class Ambulatories extends Ambulatory{
 	public function get_all(){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_all_ambulatories(?)");
+			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, C.Content as Name
+FROM Ambulatories as A 
+INNER JOIN Contents as C 
+ON A.NameContentID = C.ID 
+WHERE C.Lang = ?");
 			$query->execute(array($this->db->lang));
 		}catch(PDOException $e){
 			echo "Error: " . $e;
@@ -45,7 +49,13 @@ class Ambulatories extends Ambulatory{
 	public function get_by_doctor($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_ambulatories_by_doctor(?,?)");
+			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, C.Content as Name
+FROM Ambulatories as A 
+INNER JOIN AmbulatoriesDoctors as AD ON A.ID = AD.AmbulatoryID
+INNER JOIN Doctors as D ON AD.DoctorID = D.ID
+INNER JOIN Contents as C 
+ON A.NameContentID = C.ID
+WHERE D.ID = ? AND C.Lang = ? ");
 			$query->execute(array($id, $this->db->lang));
 		}catch(PDOException $e){
 			echo "Error: " . $e;

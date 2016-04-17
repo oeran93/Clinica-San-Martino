@@ -26,7 +26,8 @@ class Doctors extends Doctor{
 	public function get_all(){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_all_doctors()");
+			$query = $conn->prepare("SELECT D.ID, D.FirstName , D.LastName ,D.Curriculum, D.Birthday, D.Gender, D.Image
+FROM Doctors as D");
 			$query->execute();
 		}catch(PDOException $e){
 			echo "Error: " . $e;
@@ -46,7 +47,12 @@ class Doctors extends Doctor{
 	public function get_by_department($dep){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_doctors_by_department(?,?)");
+			$query = $conn->prepare("SELECT D.ID, D.FirstName , D.LastName ,D.Curriculum, D.Birthday, D.Gender, D.Image
+FROM Departments as De 
+INNER JOIN DepartmentsDoctors as DD ON De.ID = DD.DepartmentID
+INNER JOIN Doctors as D ON DD.DoctorID = D.ID
+INNER JOIN Contents as C ON De.NameContentID = C.ID
+WHERE De.ID = ? AND C.Lang = ?");
 			$query->execute(array($dep,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;
@@ -66,7 +72,12 @@ class Doctors extends Doctor{
 	public function get_by_ambulatory($amb){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_doctors_by_ambulatory(?,?)");
+			$query = $conn->prepare("SELECT D.ID, D.FirstName , D.LastName , D.Curriculum, D.Birthday, D.Gender, D.Image
+FROM Ambulatories as A 
+INNER JOIN AmbulatoriesDoctors as AD ON A.ID = AD.AmbulatoryID
+INNER JOIN Doctors as D ON AD.DoctorID = D.ID
+INNER JOIN Contents as C ON A.NameContentID = C.ID 
+WHERE A.ID = ? AND C.Lang = ?");
 			$query->execute(array($amb,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;

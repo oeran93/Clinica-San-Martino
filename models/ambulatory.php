@@ -25,7 +25,11 @@ class Ambulatory{
 	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("CALL get_ambulatory_by_id(?,?)");
+			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, A.Content as Name
+FROM Ambulatories as A 
+INNER JOIN Contents as C 
+ON A.NameContentID = C.ID 
+WHERE A.ID = ? AND C.Lang = ?");
 			$query->execute(array($id,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;
