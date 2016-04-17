@@ -1,6 +1,3 @@
--when going to div dont scroll div to real top because it is covered by navbar.
 -Store all other writings in db so that it can be selected in different languages.
 - add news
 - add gallery
-- active link on navbar
--chirurgia maxillo facciale

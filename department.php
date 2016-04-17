@@ -1,11 +1,16 @@
 <?php
 	include_once './generics.php';
+	include_once './content_extractor.php';
 	include_once './models/doctors.php';
 	include_once './models/department.php';
+	
 	$db = new Database($lang);
+	
 	$department_id = array_key_exists('ID', $_GET) ? $_GET['ID'] : 1; 
 	$department = new Department($db);
 	$department->get_by_id($department_id);
+
+	$content_extractor = new ContentExtractor("content/$lang/".strtolower($department->acronim).".xml");
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,18 +34,16 @@
 	</div>
 	<div class="container page_section">
 		<div class="row">
-			<section class="department_description col-xs-offset-1 col-xs-10">
+			<section class="department_description col-xs-12">
 				<div class="title_box col-xs-12">
 					<h3 class="text_stand_out text-center"><?php echo $department->name ?></h3>
 				</div>
 				<div class="col-xs-12">
-				<?php echo get_text_from_file("./descriptions/departments/$lang/".strtolower($department->acronim.".txt"))?>
+				<?php echo $content_extractor->get_section('description');?>
 				</div>
 			</section>
 			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
-				<div class="col-xs-12">
-					<?php include_once("./pages/".strtolower($department->acronim)."/$lang/_".strtolower($department->acronim).".php") ?>
-				</div>
+					<?php include_once("./_".strtolower($department->acronim).".php"); ?>
 			</section>
 			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
 				<div class="title_box col-xs-12">

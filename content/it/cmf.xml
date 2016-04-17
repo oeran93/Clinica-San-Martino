@@ -1,0 +1,67 @@
+<description>
+La chirurgia maxillo-facciale è la specialità medico-chirurgica che si occupa delle operazioni mirate alla cura di vari tipi di patologia tra cui traumatismo, malformazione, neoplasia, infezione, degenerazione,  e di problematiche estetico-funzionali dei denti, della bocca e della faccia. Nella Clinica San Martino opera il dottor Giorgio Pedretti che vanta una ventennale esperienza nel campo e, nel corso della propria esperienza professionale, ha compiuto migliaia di interventi. Nella clinica San Martino è possibile eseguire tutte le fasi cliniche, diagnostiche e di imaging, la scelta della terapia chirurgica indicata e il successivo assiduo e rigoroso follow-up.
+</description>
+
+<orthognatic_surgery>
+<ul>
+	<li>Correzione delle malocclusioni dentarie su base scheletrica (allungamento e accorciamento della mandibola, allungamento della mascella)</li>
+	<li>Mentoplastica e profiloplastica</li>
+	<li>Espansione chirurgica del mascellare</li>
+	<li>Chirurgia di facilitazione ortodontica:
+	<ul>
+		<li> Corticotomie</li>
+		<li> Osteotomie segmentali</li>
+		<li> Disinclusione denti inclusi</li>
+		<li> Chirurgia mucogengivale</li>
+	<ul></li>
+<ul>
+</orthognatic_surgery>
+<orthognatic_surgery_title>
+Chirurgia Ortognatica
+</orthognatic_surgery_title>
+
+<nose_surgery>
+<ul>
+	<li>Rinoplastica estetica e funzionale</li>
+	<li>Settoplastica e chirurgia dei turbinati inferiori</li>
+	<li>Ricostruzione della valvola nasale</li>
+</ul>
+</nose_surgery>
+<nose_surgery_title>
+	Chirurgia Nasale
+</nose_surgery_title>
+
+<ear_surgery>
+	Octoplastica (correzione delle orecchie a sventola)
+</ear_surgery>
+<ear_surgery_title>
+	Chirurgia dell' Orecchio
+</ear_surgery_title>
+
+<facial_traumatology>
+<ul>
+	<li>Trattamento delle fratture delle ossa facciali e delle deformità secondarie</li>
+	<li>Correzione delle deformità dei tessuti molli e della cute secondarie a trauma facciale</li>
+</ul>
+</facial_traumatology>
+<facial_traumatology_title>
+	Traumatologia Facciale
+</facial_traumatology_title>
+
+<salivary_glands_surgery>
+	Asportazione dei calcoli salivari
+</salivary_glands_surgery>
+<salivary_glands_surgery_title>
+	Chirurgia delle Ghiandole Salivari
+</salivary_glands_surgery_title>
+
+<day_surgery>
+Un’equipe di esperti anestesisti rianimatori collabora routinariamente con il dr. Pedretti permettendogli trattamenti di chirurgia minore in anestesia locale e loco-regionale in sedazione cosciente inalatoria o endovenosa. Anche gli interventi di chirurgia maggiore vengono per la maggior parte  eseguiti in sedazione endovenosa, riservando l’anestesia generale a pochi e selezionati casi che necessitano il completo controllo delle vie aeree. In ogni caso nella Clinica San Martino  tutti i trattamenti, in sedazione cosciente ed in anestesia generale, vengono eseguiti in regime di Day Surgery o di One Day Surgery. L’equipe del dr. Pedretti vanta un’ampia casistica clinica di trattamenti eseguiti con tali protocolli, molti dei quali oggetto di pubblicazioni scientifiche e presentazioni a simposi italiani ed europei.
+</day_surgery>
+<day_surgery_title>
+	Day Surgery
+</day_surgery_title>
+
+<site_ad>
+Visita <a href="http://www.gpedretti.pro"> il sito ufficiale del Dr. Pedretti</a>
+</site_ad>

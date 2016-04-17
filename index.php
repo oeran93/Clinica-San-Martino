@@ -28,12 +28,13 @@
 					data-toggle="collapse" data-target="#collapsemenu">
 						<span class="fa fa-bars fa-2x"></span>
 					</button>
+					<a href="./index.php" class="pull-left" id="logo"><img src="./images/brand/logo_3.png"></a>
 					<div class="collapse navbar-collapse" id="collapsemenu">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a class="text_stand_out" href="#" data-section="#services">Servizi</a></li>
-							<li><a class="text_stand_out" href="#" data-section="#where">Dove Siamo</a></li>
-							<li><a class="text_stand_out" href="#" data-section="#team">Il Team</a></li>
-							<li><a class="text_stand_out" href="#" data-section="#contacts">Contatti</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#services-a">Servizi</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#where-a">Dove Siamo</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#team-a">Il Team</a></li>
+							<li><a class="text_stand_out" href="#" data-section="#contacts-a">Contatti</a></li>
 						</ul>
 					</div>
 				</div>	
@@ -50,12 +51,13 @@
 		</div>
 		<div id="services_bg_image">
 			<div class="container page_section" id="services">
+				<div class="anchor" id="services-a"></div>
 				<div class="row title_box">
 					<div class="col-xs-12">
-						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>servizi<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
+						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow" data-id="#dep-scroll"></span>servizi<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow" data-id="#dep-scroll"></span></h3>
 					</div>
 				</div>
-				<div class="row h_scroll">
+				<div class="row h_scroll" id="dep-scroll">
 					<?php
 						$departments = new Departments($db);
 						$departments->get_all();
@@ -71,6 +73,7 @@
 		</div>
 		<div id="where_bg_image">
 			<div class="container page_section" id="where">
+				<div class="anchor" id="where-a"></div>
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center">dove siamo</h3>
@@ -127,12 +130,13 @@
 		</div>
 		<div id="team_bg_image">
 			<div class="container page_section" id="team">
+				<div class="anchor" id="team-a"></div>
 				<div class="row title_box">
 					<div class="col-xs-12">
-						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow"></span>il team<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow"></span></h3>
+						<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow" data-id="#doct-scroll"></span>il team<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow" data-id="#doct-scroll"></span></h3>
 					</div>
 				</div>
-				<div class="row h_scroll">
+				<div class="row h_scroll" id="doct-scroll">
 				<?php
 					$doct = new Doctors($db);
 					$doct->get_all();
@@ -154,6 +158,7 @@
 		</div>
 		<div id="contacts_bg_image">
 			<div class="container page_section" id="contacts">
+				<div class="anchor" id="contacts-a"></div>
 				<div class="row title_box">
 					<div class="col-xs-12">
 						<h3 class="text_stand_out text-center">contatti</h3>
