@@ -35,37 +35,49 @@
 	<div class="container page_section">
 		<div class="row">
 			<section class="department_description col-xs-12">
-				<div class="title_box col-xs-12">
-					<h3 class="text_stand_out text-center"><?php echo $department->name ?></h3>
-				</div>
-				<div class="col-xs-12">
-				<?php echo $content_extractor->get_section('description');?>
+				<div class="container">
+					<div class="row">
+						<div class="title_box col-xs-12">
+							<h3 class="text_stand_out text-center">
+								<?php echo $department->name ?>
+							</h3>
+						</div>
+						<div class="col-xs-12">
+							<?php echo $content_extractor->get_section('description');?>
+						</div>
+					</div>
 				</div>
 			</section>
+		</div>
+		<div class="row">
 			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
-					<?php include_once("./_".strtolower($department->acronim).".php"); ?>
+				<?php include_once("./_".strtolower($department->acronim).".php"); ?>
 			</section>
 			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
-				<div class="title_box col-xs-12">
-					<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
-				</div>
-				<div class="col-xs-12">
-					<?php 
-						$doctors = new Doctors($db);
-						$doctors->get_by_department($department->id);
-						foreach ($doctors->doctors as $doctor) {
-						echo "<section class='doctor_box'>";
-							echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
-							echo "<span class='text-capitalize h_scroll_text'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
-							if(strcmp($doctor->gender,'M')==0){
-								echo "Dr.";
-							}else{
-								echo "Dr. ssa";
-							}
-							echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
-						echo "</section>";
-						}
-					?>
+				<div class="container">	
+					<div class="row">
+						<div class="title_box col-xs-12">
+							<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
+						</div>
+						<div class="col-xs-12">
+							<?php 
+								$doctors = new Doctors($db);
+								$doctors->get_by_department($department->id);
+								foreach ($doctors->doctors as $doctor) {
+								echo "<section class='doctor_box'>";
+									echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
+									echo "<span class='text-capitalize h_scroll_text'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
+									if(strcmp($doctor->gender,'M')==0){
+										echo "Dr.";
+									}else{
+										echo "Dr. ssa";
+									}
+									echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
+								echo "</section>";
+								}
+							?>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>

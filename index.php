@@ -28,7 +28,7 @@
 					data-toggle="collapse" data-target="#collapsemenu">
 						<span class="fa fa-bars fa-2x"></span>
 					</button>
-					<a href="./index.php" class="hidden-sm pull-left" id="logo"><img src="./images/brand/logo_3.png"></a>
+					<a href="./index.php" class="visible-md visible-lg pull-left" id="logo"><img src="./images/brand/logo_3.png"></a>
 					<div class="collapse navbar-collapse" id="collapsemenu">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a class="text_stand_out" href="#" data-section="#services-a">Servizi</a></li>
@@ -43,8 +43,8 @@
 				<div class="row">
 					<section class="col-sm-5 col-md-4" id="header_description">
 						<h2 class="text-capitalize">clinica "San Martino"</h2>
-						<h4 class="text-capitalize">il cuore delle alpi, il cuore della medicina</h4>
-						<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq. La crescita demografica dell’intera provincia negli ultimi 10 anni si è assestata attorno al 9,1 %, annuo  rendendo la provincia di Lecco una delle più popolose </span><a class="link" href="">continua</a>
+						<h4 class="text-capitalize">il cuore delle alpi, il cuore della medicina</h4></br>
+						<span class"hidden-xs ellipsed_text">La Clinica San Martino è situata a Malgrate, in provincia di Lecco sulla parte terminale del lago di Como, proprio dirimpetto a Lecco. I 4.324 abitanti di Malgrate sono solo una parte della popolazione totale della provincia di Lecco che conta in totale 340.192 abitanti distribuiti su  un territorio di 814 kmq.</span>
 					</section>
 				</div>
 			</div>
@@ -143,13 +143,13 @@
 					foreach($doct->doctors as $doctor){
 						echo "<section class='col-xs-6 col-sm-3 h_scroll_box'>";
 						echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
-						echo "<span class='text-capitalize h_scroll_text'><a class='link' href='./team.php#{$doctor->first_name}{$doctor->last_name}'>";
-						if(strcmp($doctor->gender,'M')==0){
+						echo "<h5 class='text-capitalize h_scroll_text'><a class='link' href='./team.php#{$doctor->first_name}{$doctor->last_name}'>";
+						if (strcmp($doctor->gender,'M')==0) {
 							echo "Dr.";
-						}else{
+						} else {
 							echo "Dr. ssa";
 						}
-						echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
+						echo " {$doctor->last_name} {$doctor->first_name}</a></h5>";
 						echo "</section>";
 					}
 				?>
