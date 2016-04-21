@@ -25,11 +25,14 @@ class Department{
 	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT D.Acronim, D.ID, D.Image, C.Content as Name
-FROM Departments as D 
-INNER JOIN Contents as C 
-ON D.NameContentID = C.ID 
-WHERE D.ID = ? AND C.Lang = ?");
+			$query = $conn->prepare(" 
+										SELECT D.Acronim, D.ID, D.Image, C.Content as Name
+										FROM Departments as D 
+										INNER JOIN Contents as C 
+										ON D.NameContentID = C.ID 
+										WHERE D.ID = ? AND C.Lang = ? AND D.Active = 1
+
+									");
 			$query->execute(array($id,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;

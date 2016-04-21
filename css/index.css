@@ -1,12 +1,12 @@
 /*HEADER*/
 #header_bg_image{
-	height: 550px;	
+	height: 750px;	
 	background-image: url("../images/bg/1.jpg");
 }
 #header_description{
 	color:white;
 	background-color: transparent;
-	margin-top: 110px;
+	margin-top: 115px;
 }
 
 /*WHERE*/

@@ -25,3 +25,5 @@ var options = {id:'map',
 var map = create_map(options);
 create_marker(map,options);
 
+$('#header_bg_image').sS();
+

@@ -26,11 +26,13 @@ class Departments extends Department{
 	public function get_all(){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT D.Acronim, D.ID, D.Image, C.Content as Name
-FROM Departments as D 
-INNER JOIN Contents as C 
-ON D.NameContentID = C.ID 
-WHERE C.Lang = ?");
+			$query = $conn->prepare("
+										SELECT D.Acronim, D.ID, D.Image, C.Content as Name
+										FROM Departments as D 
+										INNER JOIN Contents as C 
+										ON D.NameContentID = C.ID 
+										WHERE C.Lang = ? AND D.Active = 1
+									");
 			$query->execute(array($this->db->lang));
 		}catch(PDOException $e){
 			echo "Error: " . $e;
@@ -49,13 +51,15 @@ WHERE C.Lang = ?");
 	public function get_by_doctor($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT De.Acronim, De.ID, De.Image, C.Content as Name
-FROM Departments as De 
-INNER JOIN DepartmentsDoctors as DD ON De.ID = DD.DepartmentID
-INNER JOIN Doctors as D ON DD.DoctorID = D.ID
-INNER JOIN Contents as C 
-ON De.NameContentID = C.ID 
-WHERE D.ID = ? AND C.Lang = ?");
+			$query = $conn->prepare("
+										SELECT De.Acronim, De.ID, De.Image, C.Content as Name
+										FROM Departments as De 
+										INNER JOIN DepartmentsDoctors as DD ON De.ID = DD.DepartmentID
+										INNER JOIN Doctors as D ON DD.DoctorID = D.ID
+										INNER JOIN Contents as C 
+										ON De.NameContentID = C.ID 
+										WHERE D.ID = ? AND C.Lang = ? AND De.Active = 1
+									");
 			$query->execute(array($id, $this->db->lang));
 		}catch(PDOException $e){
 			echo "Error: " . $e;

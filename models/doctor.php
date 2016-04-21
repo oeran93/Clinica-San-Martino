@@ -32,9 +32,11 @@ class Doctor {
 	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT D.ID, D.FirstName , D.LastName, D.Curriculum, D.Birthday, D.Gender, D.Image
-FROM Doctors as D
-WHERE D.ID = ?");
+			$query = $conn->prepare("
+										SELECT D.ID, D.FirstName , D.LastName, D.Curriculum, D.Birthday, D.Gender, D.Image
+										FROM Doctors as D
+										WHERE D.ID = ? AND D.Active = 1
+									");
 			$query->execute(array($id));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;

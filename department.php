@@ -2,7 +2,7 @@
 	include_once './generics.php';
 	include_once './content_extractor.php';
 	include_once './models/doctors.php';
-	include_once './models/department.php';
+	include_once './models/departments.php';
 	
 	$db = new Database($lang);
 	
@@ -30,21 +30,38 @@
 <body>
 	<?php echo "<div id='header_bg_image' data-image='{$department->image}'>"; 
 			include_once("./_navbar.php");
+			echo "</div>";
 	?>
+	<div class="container page_section">
+		<div class="row title_box">
+			<div class="col-xs-12">
+				<h3 class="text_stand_out text-center"><span class="fa fa-arrow-circle-o-left fa-lg scroll_arrow left_scroll_arrow" data-id="#dep-scroll"></span>servizi<span class=" fa fa-arrow-circle-o-right fa-lg scroll_arrow right_scroll_arrow" data-id="#dep-scroll"></span></h3>
+			</div>
+		</div>
+		<div class="row h_scroll" id="dep-scroll">
+			<?php
+				$all_deps = new Departments($db);
+				$all_deps->get_all();
+				foreach ($all_deps->departments as $one_d) {
+					echo "<section class='col-xs-6 col-sm-3 h_scroll_box h_scroll_box'>";
+						echo "<img class='img-thumbnail img-responsive' src='./images/departments/{$one_d->image}'>";
+						echo "<h5 class='text-capitalize h_scroll_text'><a href='./department.php?ID={$one_d->id}' class='link'>{$one_d->name}</a></h5>";
+					echo "</section>";
+				}
+			?>
+		</div>
 	</div>
 	<div class="container page_section">
 		<div class="row">
 			<section class="department_description col-xs-12">
-				<div class="container">
-					<div class="row">
-						<div class="title_box col-xs-12">
-							<h3 class="text_stand_out text-center">
-								<?php echo $department->name ?>
-							</h3>
-						</div>
-						<div class="col-xs-12">
-							<?php echo $content_extractor->get_section('description');?>
-						</div>
+				<div class="row">
+					<div class="title_box col-xs-12">
+						<h3 class="text_stand_out text-center">
+							<?php echo $department->name ?>
+						</h3>
+					</div>
+					<div class="col-xs-12">
+						<?php echo $content_extractor->get_section('description');?>
 					</div>
 				</div>
 			</section>
@@ -54,29 +71,27 @@
 				<?php include_once("./_".strtolower($department->acronim).".php"); ?>
 			</section>
 			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
-				<div class="container">	
-					<div class="row">
-						<div class="title_box col-xs-12">
-							<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
-						</div>
-						<div class="col-xs-12">
-							<?php 
-								$doctors = new Doctors($db);
-								$doctors->get_by_department($department->id);
-								foreach ($doctors->doctors as $doctor) {
-								echo "<section class='doctor_box'>";
-									echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
-									echo "<span class='text-capitalize h_scroll_text'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
-									if(strcmp($doctor->gender,'M')==0){
-										echo "Dr.";
-									}else{
-										echo "Dr. ssa";
-									}
-									echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
-								echo "</section>";
+				<div class="row">
+					<div class="title_box col-xs-12">
+						<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
+					</div>
+					<div class="col-xs-12">
+						<?php 
+							$doctors = new Doctors($db);
+							$doctors->get_by_department($department->id);
+							foreach ($doctors->doctors as $doctor) {
+							echo "<section class='doctor_box'>";
+								echo "<img class='img-thumbnail img-responsive' src='./images/doctors/{$doctor->image}'>";
+								echo "<span class='text-capitalize h_scroll_text'><a href='./team.php#{$doctor->first_name}{$doctor->last_name}' class ='link'>";
+								if(strcmp($doctor->gender,'M')==0){
+									echo "Dr.";
+								}else{
+									echo "Dr. ssa";
 								}
-							?>
-						</div>
+								echo " {$doctor->last_name} {$doctor->first_name}</a></span>";
+							echo "</section>";
+							}
+						?>
 					</div>
 				</div>
 			</section>
