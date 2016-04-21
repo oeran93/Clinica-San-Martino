@@ -14,7 +14,8 @@ $(".navbar a").click(function(){
 /*
 * Create the map for contact section
 */
-var options = {id:'map',
+var options = {
+			id:'map',
 			lat: 45.849690,
 			lng: 9.371508,
 			zoom:15,
@@ -25,5 +26,11 @@ var options = {id:'map',
 var map = create_map(options);
 create_marker(map,options);
 
-$('#header_bg_image').sS();
+$('#header_bg_image').sS({
+						path: './images/bg/',
+						images: [
+							'1.jpg',
+							'2.jpg'
+						]
+					});
 
