@@ -5,7 +5,7 @@
 	foreach($ambulatories->ambulatories as $ambulatory){
 		echo "<div class='row ambulatory'>";
 			echo "<section class='col-xs-12 col-sm-6 col-md-3' class='picture'>";
-				echo "<img class='img-thumbnail img-responsive' src='./images/ambulatories/{$ambulatory->image}'>";
+				echo "<img class='img-thumbnail img-responsive' src='./images/ambulatories/small/{$ambulatory->image}'>";
 			echo "</section>";
 			echo "<section class='row infos col-xs-12 col-sm-6 col-md-9'>";
 				echo "<section class='col-xs-12'>";

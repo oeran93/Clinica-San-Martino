@@ -88,7 +88,7 @@
 						$departments->get_all();
 						foreach ($departments->departments as $department) {
 							echo "<section class='col-xs-6 col-sm-3 h_scroll_box h_scroll_box'>";
-								echo "<img class='img-thumbnail img-responsive' src='./images/departments/{$department->image}'>";
+								echo "<img class='img-thumbnail img-responsive' src='./images/departments/small/{$department->image}'>";
 								echo "<h5 class='text-capitalize h_scroll_text'><a href='./department.php?ID={$department->id}' class='link'>{$department->name}</a></h5>";
 							echo "</section>";
 						}
