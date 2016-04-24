@@ -1,3 +1,2 @@
--Store all other writings in db so that it can be selected in different languages.
-- add news
-- add gallery
+scale small images for departments and ambulatories.
+add a footer for contacts that must be eliminated from the index page
