@@ -70,7 +70,7 @@
 			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
 				<?php include_once("./_".strtolower($department->acronim).".php"); ?>
 			</section>
-			<section class ="section col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
+			<section class ="section col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-2">
 				<div class="row">
 					<div class="title_box col-xs-12">
 						<h3 class="text_stand_out text-center"><?php echo "Medici" ?></h3>
@@ -97,6 +97,9 @@
 			</section>
 		</div>
 	</div>
+	<?php  
+		include_once("./_footer.php");
+	?>
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/format.js"></script>

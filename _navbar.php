@@ -10,7 +10,7 @@
 				<li><a class="text_stand_out" href="./index.php#services-a">Servizi</a></li>
 				<li><a class="text_stand_out" href="./index.php#where-a">Dove Siamo</a></li>
 				<li><a class="text_stand_out" href="./team.php">Il Team</a></li>
-				<li><a class="text_stand_out" href="./index.php#contacts-a">Contatti</a></li>
+				<li><a class="text_stand_out" href="./index.php#contacts">Contatti</a></li>
 			</ul>
 		</div>
 	</div>	

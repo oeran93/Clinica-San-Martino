@@ -49,7 +49,7 @@
 								</a>
 							</li>
 							<li>
-								<a class="text_stand_out" href="#" data-section="#contacts-a">
+								<a class="text_stand_out" href="#" data-section="#contacts">
 									Contatti
 								</a>
 							</li>
@@ -181,57 +181,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="contacts_bg_image">
-			<div class="container page_section" id="contacts">
-				<div class="anchor" id="contacts-a"></div>
-				<div class="row title_box">
-					<div class="col-xs-12">
-						<h3 class="text_stand_out text-center">contatti</h3>
-					</div>
-				</div>
-				<div class="row">
-					<section class="col-xs-12 col-md-5" id="contacts_info">
-						<div class="text-capitalize row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-clock-o fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								Lunedi' - Venerdi': 7:30 / 19:00.</br>
-								Sabato: 7:30 / 11:00.</br>
-								Analisi del Sangue: Lunedi' - Sabato, 7:30 / 8:45</br>
-							</div>
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-phone-square fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								+39 0341 1695111
-							</div>
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-paper-plane fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								info@clinicasmartino.it
-							</div>
-						</div>
-						<div class="row contacts_info">
-							<div class="col-xs-2">
-								<span class="fa fa-facebook-official fa-3x"></span>
-							</div>
-							<div class="col-xs-10">
-								<a class="link" href="https://www.facebook.com/clinicasmartinomalgrate/"> Visita La Nostra Pagina Facebook</a>
-							</div>
-						</div>
-					</section>
-					<section class="hidden-xs hidden-sm col-md-7" id="contacts_photo">
-						<img class="img-responsive img-rounded img-thumbnail" src="./images/contact/1.jpg">
-					</section>
-				</div>
-			</div>
-		</div>
+		<?php  
+			include_once("./_footer.php");
+		?>
 		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="./js/slideshow.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>

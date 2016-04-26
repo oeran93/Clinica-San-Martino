@@ -5,8 +5,9 @@
 }
 #header_description{
 	color:white;
-	background-color: transparent;
-	margin-top: 115px;
+	padding:10px;
+	background-color: rgba(0,0,0,.2);
+	margin-top: 150px;
 }
 
 /*WHERE*/
@@ -27,16 +28,5 @@
 	}	
 }
 #where span{
-	color:rgba(  5, 131, 198,1);
-}
-
-/*CONTATTI*/
-#contacts img{
-	width:100%;
-}
-.contacts_info{
-	padding:30px 0 30px 0;
-}
-#contacts_info span{
 	color:rgba(  5, 131, 198,1);
 }

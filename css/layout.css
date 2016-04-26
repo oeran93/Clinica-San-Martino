@@ -112,6 +112,30 @@ a:focus,a:visited,a:hover{
 	}
 }
 
+/*FOOTER*/
+footer{
+	/*background-image: url('../images/patterns/footer.png');*/
+  	background-color:rgba(128,128,128,.2);
+  	width: 100%;
+  	border-top:1px solid rgba(128,128,128,.5);
+  	padding: 100px 0 100px 0;
+}
+
+footer h4{
+	margin-bottom: 15px;
+	margin-top: 7px;
+}
+
+footer span{
+	padding: 0 10px 0 0;
+}
+
+footer p{
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
 /*HORIZONTAL SCROLLER*/
 .h_scroll{
 	overflow:hidden;
