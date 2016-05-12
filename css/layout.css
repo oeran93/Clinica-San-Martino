@@ -44,14 +44,15 @@ a:focus,a:visited,a:hover{
 /*NAVIGATION BAR*/
 .navbar, .navbar-default{
 	margin-bottom: 0;
-	min-height: 80px;
+	min-height: 100px;
 	border:0;
 	border-radius: 0;
 	background-color: rgba(  255, 255, 255,.9);
 }
 #logo{
-	height:80px;
-	width:363px;
+	padding-top: 6px;
+	height:92px;
+	width:348px;
 }
 #logo img{
 	height:100%;
@@ -60,7 +61,7 @@ a:focus,a:visited,a:hover{
 .navbar-default .navbar-nav>li>a{
 	font-weight: 600;
 	color: rgba(  5, 131, 198,1);
-	line-height: 80px;
+	line-height: 100px;
 	padding-top:0;
 	padding-bottom:0;
 	border-bottom: 2px solid transparent;

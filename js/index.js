@@ -3,15 +3,6 @@ DEPENDENCIES: maps.js, map_styles.js (if any styles are used)
 */
 
 /*
-* Scroll to section navbar link
-*/
-$(".navbar a").click(function(){
-	$('html,body').animate({
-		scrollTop: $($(this).data('section')).offset().top
-	},'slow');
-});
-
-/*
 * Create the map for contact section
 */
 var options = {

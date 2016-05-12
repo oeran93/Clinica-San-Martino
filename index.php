@@ -29,7 +29,7 @@
 						<span class="fa fa-bars fa-2x"></span>
 					</button>
 					<a href="./index.php" class="visible-md visible-lg pull-left" id="logo">
-						<img src="./images/brand/logo_3.png" />
+						<img src="./images/brand/logo3.png" />
 					</a>
 					<div class="collapse navbar-collapse" id="collapsemenu">
 						<ul class="nav navbar-nav navbar-right">
@@ -49,7 +49,8 @@
 								</a>
 							</li>
 							<li>
-								<a class="text_stand_out" href="#" data-section="#contacts">
+								<a class="text_stand_out" href="#"
+								data-section="#contacts-a">
 									Contatti
 								</a>
 							</li>
