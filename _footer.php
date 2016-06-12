@@ -16,8 +16,8 @@
 			<p>info@clinicasmartino.it</p>
 		</div>
 		<div class='col-sm-2 col-xs-12'>
-			<a class="link pull-right" href="https://www.facebook.com/clinicasmartinomalgrate/"><span class="fa fa-facebook-square fa-3x"></span></a>
-			<a class="link pull-right" href="https://www.linkedin.com/company/clinica-san-martino"><span class="fa fa-linkedin-square fa-3x"></span></a>
+			<a class="link pull-right" href="https://www.facebook.com/clinicasmartinomalgrate/"><span class="fa fa-facebook fa-3x"></span></a>
+			<a class="link pull-right" href="https://www.linkedin.com/company/clinica-san-martino"><span class="fa fa-linkedin fa-3x"></span></a>
 		</div>
 	</div>
 </footer>
