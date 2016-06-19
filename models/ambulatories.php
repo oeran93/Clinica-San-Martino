@@ -26,11 +26,12 @@ class Ambulatories extends Ambulatory{
 	public function get_all(){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, C.Content as Name
-FROM Ambulatories as A 
-INNER JOIN Contents as C 
-ON A.NameContentID = C.ID 
-WHERE C.Lang = ?");
+			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, A.Active, C.Content as Name
+				FROM Ambulatories as A 
+				INNER JOIN Contents as C 
+				ON A.NameContentID = C.ID 
+				WHERE C.Lang = ?"
+			);
 			$query->execute(array($this->db->lang));
 		}catch(PDOException $e){
 			echo "Error: " . $e;

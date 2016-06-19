@@ -8,6 +8,7 @@ class Ambulatory{
 	public $name;
 	public $image;
 	public $acronim;
+	public $active;
 	protected $db;
 
 	/*
@@ -25,11 +26,13 @@ class Ambulatory{
 	public function get_by_id($id){
 		$conn = $this->db->conn;
 		try{
-			$query = $conn->prepare("SELECT A.Acronim, A.ID, A.Image, A.Content as Name
-FROM Ambulatories as A 
-INNER JOIN Contents as C 
-ON A.NameContentID = C.ID 
-WHERE A.ID = ? AND C.Lang = ?");
+			$query = $conn->prepare("
+										SELECT A.Acronim, A.ID, A.Image, A.Active, C.Content as Name
+										FROM Ambulatories as A 
+										INNER JOIN Contents as C 
+										ON A.NameContentID = C.ID 
+										WHERE A.ID = ? AND C.Lang = ?
+									");
 			$query->execute(array($id,$this->db->lang));
 		}catch(PDOException  $e){
 			echo "Error: " . $e;
@@ -46,6 +49,7 @@ WHERE A.ID = ? AND C.Lang = ?");
 		$this->name = $ambulatory['Name'];
 		$this->image = $ambulatory['Image'];
 		$this->acronim = $ambulatory['Acronim'];
+		$this->active = $ambulatory['Active'];
 	}
 }
 ?>

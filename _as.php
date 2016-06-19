@@ -9,8 +9,13 @@
 			echo "</section>";
 			echo "<section class='row infos col-xs-12 col-sm-6 col-md-9'>";
 				echo "<section class='col-xs-12'>";
-					echo "<h3><p>";
-					echo " {$ambulatory->name}</p></h3>";
+					echo "<h3>";
+						echo "<p>";
+							if ($ambulatory->active) echo "<a href='./ambulatory.php?ID={$ambulatory->id}'>";
+								echo "{$ambulatory->name}";
+							if ($ambulatory->active) echo "</a>";
+						echo "</p>";
+					echo "</h3>";
 					$doctors = new Doctors($db);
 					$doctors->get_by_ambulatory($ambulatory->id);
 					foreach ($doctors->doctors as $doctor) {
