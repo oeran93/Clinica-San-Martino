@@ -10,7 +10,7 @@
 	$ambulatory = new Ambulatory($db);
 	$ambulatory->get_by_id($ambulatory_id);
 
-	$content_extractor = new ContentExtractor("content/$lang/".strtolower($ambulatory->acronim).".xml");
+	$content_extractor = new ContentExtractor("content/$lang/ambulatories/".strtolower($ambulatory->acronim).".xml");
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
 </head>
 <body>
 	<?php echo "<div id='header_bg_image' data-image='{$ambulatory->image}'>"; 
-			include_once("./_navbar.php");
+			include_once("./partials/_navbar.php");
 			echo "</div>";
 	?>
 	<div class="container page_section">
@@ -45,7 +45,7 @@
 				foreach ($all_amb->ambulatories as $one_a) {
 					if (!$one_a->active) continue;
 					echo "<section class='col-xs-6 col-sm-3 h_scroll_box h_scroll_box'>";
-						echo "<img class='img-thumbnail img-responsive' src='./images/Ambulatoriess/small/{$one_a->image}'>";
+						echo "<img class='img-thumbnail img-responsive' src='./images/ambulatories/small/{$one_a->image}'>";
 						echo "<h5 class='text-capitalize h_scroll_text'><a href='./ambulatory.php?ID={$one_a->id}' class='link'>{$one_a->name}</a></h5>";
 					echo "</section>";
 				}
@@ -69,7 +69,7 @@
 		</div>
 		<div class="row">
 			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
-				<?php include_once("./_".strtolower($ambulatory->acronim).".php"); ?>
+				<?php include_once("./partials/_".strtolower($ambulatory->acronim).".php"); ?>
 			</section>
 			<section class ="section col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-2">
 				<div class="row">
@@ -99,7 +99,7 @@
 		</div>
 	</div>
 	<?php  
-		include_once("./_footer.php");
+		include_once("./partials/_footer.php");
 	?>
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>

@@ -10,7 +10,7 @@
 	$department = new Department($db);
 	$department->get_by_id($department_id);
 
-	$content_extractor = new ContentExtractor("content/$lang/".strtolower($department->acronim).".xml");
+	$content_extractor = new ContentExtractor("content/$lang/departments/".strtolower($department->acronim).".xml");
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
 </head>
 <body>
 	<?php echo "<div id='header_bg_image' data-image='{$department->image}'>"; 
-			include_once("./_navbar.php");
+			include_once("./partials/_navbar.php");
 			echo "</div>";
 	?>
 	<div class="container page_section">
@@ -68,7 +68,7 @@
 		</div>
 		<div class="row">
 			<section class ="section col-xs-12 col-md-offset-1 col-md-8">
-				<?php include_once("./_".strtolower($department->acronim).".php"); ?>
+				<?php include_once("./partials/_".strtolower($department->acronim).".php"); ?>
 			</section>
 			<section class ="section col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-2">
 				<div class="row">
@@ -98,7 +98,7 @@
 		</div>
 	</div>
 	<?php  
-		include_once("./_footer.php");
+		include_once("./partials/_footer.php");
 	?>
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>

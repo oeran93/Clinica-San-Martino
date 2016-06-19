@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div id="header_bg_image">
-		<?php include_once("./_navbar.php");?>
+		<?php include_once("./partials/_navbar.php");?>
 	</div>
 	<div class="container page_section" id="team_list">
 		<div class="row title_box">
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	<?php  
-		include_once("./_footer.php");
+		include_once("./partials/_footer.php");
 	?>
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
