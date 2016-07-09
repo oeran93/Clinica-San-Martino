@@ -3,6 +3,7 @@
 	$ambulatories = new Ambulatories($db);
 	$ambulatories->get_all();
 	foreach($ambulatories->ambulatories as $ambulatory){
+		if (!$ambulatories->active) { continue;}
 		echo "<div class='row ambulatory'>";
 			echo "<section class='col-xs-12 col-sm-6 col-md-3' class='picture'>";
 				echo "<img class='img-thumbnail img-responsive' src='./images/ambulatories/small/{$ambulatory->image}'>";
@@ -11,9 +12,9 @@
 				echo "<section class='col-xs-12'>";
 					echo "<h3>";
 						echo "<p>";
-							if ($ambulatory->active) echo "<a href='./ambulatory.php?ID={$ambulatory->id}'>";
+							if ($ambulatory->acronim == 'CA') {echo "<a href='./ambulatory.php?ID={$ambulatory->id}'>";}
 								echo "{$ambulatory->name}";
-							if ($ambulatory->active) echo "</a>";
+							if ($ambulatory->acronim == 'CA') {echo "</a>";}
 						echo "</p>";
 					echo "</h3>";
 					$doctors = new Doctors($db);

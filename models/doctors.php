@@ -27,7 +27,7 @@ class Doctors extends Doctor{
 		$conn = $this->db->conn;
 		try{
 			$query = $conn->prepare("
-										SELECT D.ID, D.FirstName , D.LastName ,D.Curriculum, D.Birthday, D.Gender, D.Image
+										SELECT D.ID, D.FirstName , D.LastName , D.Prefix, D.Curriculum, D.Birthday, D.Gender, D.Image
 										FROM Doctors as D
 										WHERE D.Active = 1
 									");
@@ -51,7 +51,7 @@ class Doctors extends Doctor{
 		$conn = $this->db->conn;
 		try{
 			$query = $conn->prepare("
-										SELECT D.ID, D.FirstName , D.LastName ,D.Curriculum, D.Birthday, D.Gender, D.Image
+										SELECT D.ID, D.FirstName , D.LastName ,D.Prefix, D.Curriculum, D.Birthday, D.Gender, D.Image
 										FROM Departments as De 
 										INNER JOIN DepartmentsDoctors as DD ON De.ID = DD.DepartmentID
 										INNER JOIN Doctors as D ON DD.DoctorID = D.ID

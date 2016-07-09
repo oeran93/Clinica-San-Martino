@@ -11,6 +11,7 @@ class Doctor {
 	public $id;
 	public $first_name;
 	public $last_name;
+	public $prefix;
 	public $birthday;
 	public $gender;
 	public $image;
@@ -33,7 +34,7 @@ class Doctor {
 		$conn = $this->db->conn;
 		try{
 			$query = $conn->prepare("
-										SELECT D.ID, D.FirstName , D.LastName, D.Curriculum, D.Birthday, D.Gender, D.Image
+										SELECT D.ID, D.FirstName , D.LastName, D.Prefix, D.Curriculum, D.Birthday, D.Gender, D.Image
 										FROM Doctors as D
 										WHERE D.ID = ? AND D.Active = 1
 									");
@@ -52,6 +53,7 @@ class Doctor {
 		$this->id = $doctor['ID'];
 		$this->first_name = $doctor['FirstName'];
 		$this->last_name = $doctor['LastName'];
+		$this->prefix = $doctor['Prefix'];
 		$this->birthday = $doctor['Birthday'];
 		$this->gender = $doctor['Gender'];
 		$this->image = $doctor['Image'];
